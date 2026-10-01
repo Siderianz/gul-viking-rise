@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Гайды | Гильдия Viking Rise</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">VR</span><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <nav class="top-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="migration.html">Заявка на миграцию</a>
+        <a href="achievements.html">Достижения</a>
+        <a href="media.html">Медиа</a>
+        <a class="active" href="guides.html">Гайды</a>
+        <a href="kingdom.html">Структура королевства</a>
+        <a href="contacts.html">Контакты и ссылки</a>
+      </nav>
+    </header>
+
+    <main class="page guides-page">
+      <section class="page-title guide-title">
+        <p class="eyebrow">GUL Ultimate Guide</p>
+        <h1 data-i18n="guides.title">Гайды Viking Rise</h1>
+        <p data-i18n="guides.intro">
+          Полная текстовая версия Excel-гайда для K709. Вкладки ниже повторяют
+          листы оригинального документа: PvP, сезонные сборки, маунты,
+          экипировка, события, опыт, фрагменты и исследования.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="GUL Ultimate Guide.xlsx" download data-i18n="guides.download">Скачать Excel</a>
+          <a class="button" href="https://docs.google.com/spreadsheets/d/1q49zHAj6hK8vT-AieP3fpKfMtoQGrmMfnsQCtGOAT1E/edit?usp=sharing" target="_blank" rel="noreferrer" data-i18n="guides.original">Открыть оригинал</a>
+          <a class="button" href="https://docs.google.com/spreadsheets/d/1F1evqgHF9Qa7WUd12Sj3znI-mJsNrKk0ZDeVDuFUCvE/edit?usp=drivesdk" target="_blank" rel="noreferrer" data-i18n="guides.calculator">PvP калькулятор</a>
+        </div>
+      </section>
+
+      <section class="guide-app" aria-label="GUL Ultimate Guide">
+        <div class="guide-toolbar">
+          <div>
+            <p class="eyebrow" data-i18n="guides.workbook">Workbook</p>
+            <h2 id="active-sheet-title" data-i18n="guides.loading">Загрузка гайда</h2>
+          </div>
+          <label class="guide-search">
+            <span data-i18n="guides.search">Поиск</span>
+            <input id="guide-search" type="search" placeholder="Навык, герой, событие" data-placeholder-i18n="guides.searchPlaceholder">
+          </label>
+        </div>
+
+        <div class="sheet-tabs" id="sheet-tabs" role="tablist" aria-label="Вкладки гайда"></div>
+        <div class="sheet-meta" id="sheet-meta"></div>
+
+        <div class="guide-content" id="guide-content" aria-describedby="sheet-meta"></div>
+      </section>
+
+      <section class="guide-credit">
+        <p data-i18n="guides.credit">Источник: GUL Ultimate Guide. Credits: Thorbjørnsson.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Гайды для команды</span></footer>
+    <script src="guide-data.js"></script>
+    <script src="guide-render.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

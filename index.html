@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Гильдия Viking Rise</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="language-gate" data-language-gate>
+      <div class="gate-backdrop"></div>
+      <section class="gate-panel" aria-label="Language selection">
+        <div class="gate-logo-wrap">
+          <img class="gate-logo" src="assets/guild-logo-cutout.png" alt="GUL" onerror="this.classList.add('is-missing')" />
+          <div class="gate-logo-fallback">GUL</div>
+        </div>
+        <div class="rune-choice" aria-label="Выбор языка">
+          <button class="rune-button" type="button" data-lang-choice="ru" aria-label="Открыть сайт на русском">
+            <span class="rune-symbol">&#x16B1;</span>
+            <span>Русский</span>
+          </button>
+          <button class="rune-button" type="button" data-lang-choice="en" aria-label="Open site in English">
+            <span class="rune-symbol">&#x16D6;</span>
+            <span>English</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Главная страница гильдии">
+        <span class="brand-mark">VR</span>
+        <span>
+          <strong data-i18n="brand.title">Гильдия Viking Rise</strong>
+          <small data-i18n="brand.subtitle">Королевство, рейды, союзники</small>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Основная навигация">
+        <a class="active" href="index.html" data-i18n="nav.home">Главная</a>
+        <a href="migration.html" data-i18n="nav.migration">Заявка на миграцию</a>
+        <a href="achievements.html" data-i18n="nav.achievements">Достижения</a>
+        <a href="media.html" data-i18n="nav.media">Медиа</a>
+        <a href="guides.html" data-i18n="nav.guides">Гайды</a>
+        <a href="kingdom.html" data-i18n="nav.kingdom">Структура королевства</a>
+        <a href="contacts.html" data-i18n="nav.contacts">Контакты и ссылки</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Viking Rise Guild Hub</p>
+          <h1 data-i18n="home.heroTitle">Дом гильдии для набора, координации и общей истории.</h1>
+          <p data-i18n="home.heroText">
+            Здесь будет центр вашей гильдии: заявки для новых игроков, победы,
+            медиаархив, полезные гайды, структура королевства и быстрые ссылки.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="migration.html" data-i18n="home.apply">Подать заявку</a>
+            <a class="button" href="guides.html" data-i18n="home.guides">Открыть гайды</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="home.sectionsEyebrow">Разделы</p>
+          <h2 data-i18n="home.sectionsTitle">Навигация по штабу</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3 data-i18n="cards.migrationTitle">Заявка на миграцию</h3>
+            <p data-i18n="cards.migrationText">Требования, анкета кандидата и статус рассмотрения.</p>
+            <a href="migration.html" data-i18n="cards.open">Перейти</a>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="cards.achievementsTitle">Достижения</h3>
+            <p data-i18n="cards.achievementsText">Вехи королевства, победы, рейтинги и важные даты.</p>
+            <a href="achievements.html" data-i18n="cards.open">Перейти</a>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="cards.mediaTitle">Медиа</h3>
+            <p data-i18n="cards.mediaText">Скриншоты, видео, афиши событий и галерея битв.</p>
+            <a href="media.html" data-i18n="cards.open">Перейти</a>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="cards.guidesTitle">Гайды</h3>
+            <p data-i18n="cards.guidesText">Сборки, развитие, PvP, события и памятки для новичков.</p>
+            <a href="guides.html" data-i18n="cards.open">Перейти</a>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="cards.kingdomTitle">Структура королевства</h3>
+            <p data-i18n="cards.kingdomText">Альянсы, роли, дипломатия и зоны ответственности.</p>
+            <a href="kingdom.html" data-i18n="cards.open">Перейти</a>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="cards.contactsTitle">Контакты и ссылки</h3>
+            <p data-i18n="cards.contactsText">Discord, игровые координаты, лидеры и внешние ресурсы.</p>
+            <a href="contacts.html" data-i18n="cards.open">Перейти</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="brand.title">Гильдия Viking Rise</span>
+      <span data-i18n="footer.note">Скелет сайта для дальнейшего наполнения</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

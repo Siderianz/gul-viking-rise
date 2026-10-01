@@ -1,0 +1,1225 @@
+:root {
+  color-scheme: dark;
+  --bg: #10161a;
+  --panel: #172024;
+  --panel-strong: #202b2f;
+  --text: #eef3ec;
+  --muted: #a7b4ad;
+  --line: rgba(238, 243, 236, 0.14);
+  --gold: #d8a84f;
+  --red: #9f3f34;
+  --green: #567b62;
+  --shadow: rgba(0, 0, 0, 0.32);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body.has-language-gate {
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+.language-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 186, 76, 0.18), transparent 34%),
+    url("assets/hero-viking-guild.png") center / cover no-repeat,
+    #090d0f;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 320ms ease, visibility 320ms ease;
+}
+
+.language-gate::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background: url("assets/guild-logo-cutout.png") center / contain no-repeat;
+  filter: blur(34px) saturate(1.5) brightness(1.15);
+  opacity: 0.56;
+  transform: scale(1.18);
+}
+
+.language-gate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 196, 94, 0.22), transparent 32%),
+    radial-gradient(circle at 32% 44%, rgba(205, 48, 22, 0.22), transparent 34%),
+    radial-gradient(circle at 68% 44%, rgba(88, 144, 198, 0.18), transparent 36%),
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(5, 8, 10, 0.2) 48%, rgba(5, 8, 10, 0.84) 100%);
+  pointer-events: none;
+}
+
+.language-gate.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gate-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255, 214, 132, 0.2), transparent 24%),
+    linear-gradient(180deg, rgba(255, 218, 128, 0.08), transparent 40%);
+  mix-blend-mode: screen;
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.gate-panel {
+  position: relative;
+  z-index: 1;
+  width: min(680px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: clamp(14px, 3vw, 24px);
+  padding: clamp(12px, 4vw, 36px);
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.gate-logo-wrap {
+  position: relative;
+  width: min(620px, 86vw);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  margin-top: -3vh;
+}
+
+.gate-logo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -26%;
+  background: url("assets/guild-logo-cutout.png") center / contain no-repeat;
+  filter: blur(28px) saturate(1.5) brightness(1.18);
+  opacity: 0.76;
+  pointer-events: none;
+}
+
+.gate-logo-wrap::after {
+  content: none;
+}
+
+.gate-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+  filter:
+    drop-shadow(0 22px 46px rgba(0, 0, 0, 0.78))
+    drop-shadow(0 0 26px rgba(216, 168, 79, 0.36));
+  mix-blend-mode: normal;
+  mask-image: none;
+  -webkit-mask-image: none;
+  pointer-events: none;
+}
+
+.gate-logo.is-missing {
+  display: none;
+}
+
+.gate-logo-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  border: 0;
+  background:
+    radial-gradient(circle, rgba(216, 168, 79, 0.22), transparent 58%),
+    linear-gradient(135deg, rgba(159, 63, 52, 0.18), rgba(32, 43, 47, 0.62));
+  color: #ffe0a1;
+  font-size: clamp(58px, 18vw, 118px);
+  font-weight: 950;
+  line-height: 1;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  mask-image: radial-gradient(circle, #000 42%, rgba(0, 0, 0, 0.22) 70%, transparent 84%);
+  -webkit-mask-image: radial-gradient(circle, #000 42%, rgba(0, 0, 0, 0.22) 70%, transparent 84%);
+}
+
+.gate-logo:not(.is-missing) + .gate-logo-fallback {
+  opacity: 0;
+}
+
+.rune-choice {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(34px, 9vw, 96px);
+  width: min(420px, 100%);
+  margin-top: -18px;
+  position: relative;
+  z-index: 3;
+}
+
+.rune-button {
+  min-height: 118px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  border: 0;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 196, 83, 0.28), transparent 44%),
+    radial-gradient(circle at 50% 62%, rgba(159, 63, 52, 0.18), transparent 54%);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.72);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.rune-button:hover,
+.rune-button:focus-visible {
+  filter: brightness(1.16);
+  transform: translateY(-3px) scale(1.04);
+  outline: none;
+}
+
+.rune-symbol {
+  color: #f0b84f;
+  font-size: clamp(62px, 11vw, 92px);
+  line-height: 1;
+  text-shadow:
+    0 0 18px rgba(216, 168, 79, 0.72),
+    0 0 46px rgba(216, 168, 79, 0.42),
+    0 12px 28px rgba(0, 0, 0, 0.86);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px clamp(18px, 4vw, 54px);
+  background: rgba(16, 22, 26, 0.92);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 250px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(216, 168, 79, 0.6);
+  background: linear-gradient(135deg, #253238, #6f2d29);
+  color: #ffe0a1;
+  font-weight: 800;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.top-nav {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.top-nav a {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+  border-color: rgba(216, 168, 79, 0.5);
+  background: rgba(216, 168, 79, 0.12);
+  color: var(--text);
+}
+
+.hero {
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(60px, 10vw, 120px) clamp(20px, 6vw, 86px);
+  background:
+    linear-gradient(90deg, rgba(16, 22, 26, 0.92) 0%, rgba(16, 22, 26, 0.72) 36%, rgba(16, 22, 26, 0.16) 100%),
+    url("assets/hero-viking-guild.png") center / cover;
+}
+
+.hero-content,
+.page-title,
+.section,
+.page {
+  max-width: 1160px;
+}
+
+.hero-content {
+  width: min(660px, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: clamp(40px, 7vw, 76px);
+  line-height: 1.02;
+}
+
+h2 {
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+.hero p,
+.page-title p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid rgba(238, 243, 236, 0.2);
+  background: rgba(238, 243, 236, 0.08);
+  color: var(--text);
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button.primary {
+  border-color: rgba(216, 168, 79, 0.75);
+  background: var(--gold);
+  color: #1b1710;
+}
+
+.section,
+.page {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.page {
+  padding: 54px 0 80px;
+}
+
+.page-title {
+  margin-bottom: 34px;
+}
+
+.page-title h1 {
+  font-size: clamp(34px, 5vw, 58px);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.feature-grid,
+.content-grid,
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.two-columns {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.feature-card,
+.panel,
+.timeline-item,
+.rank-list article,
+.media-tile {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 18px 42px var(--shadow);
+}
+
+.feature-card,
+.panel {
+  padding: 24px;
+}
+
+.feature-card p,
+.panel p,
+.timeline-item p,
+.rank-list p {
+  color: var(--muted);
+}
+
+.feature-card a,
+.panel a {
+  color: #f2c979;
+  font-weight: 750;
+}
+
+.timeline {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  padding: 24px;
+}
+
+.timeline-item span,
+.rank-list span {
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.media-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.media-tile {
+  min-height: 190px;
+  display: flex;
+  align-items: end;
+  padding: 18px;
+  background:
+    linear-gradient(145deg, rgba(159, 63, 52, 0.55), rgba(32, 43, 47, 0.9)),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 14px);
+}
+
+.media-tile span {
+  font-size: 20px;
+  font-weight: 850;
+}
+
+.rank-list {
+  display: grid;
+  gap: 14px;
+}
+
+.rank-list article {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+}
+
+.kingdom-page {
+  max-width: 1180px;
+}
+
+.kingdom-lead {
+  display: grid;
+  grid-template-columns: 96px 142px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(216, 168, 79, 0.34);
+  background:
+    linear-gradient(135deg, rgba(159, 63, 52, 0.34), rgba(32, 43, 47, 0.94)),
+    var(--panel);
+  box-shadow: 0 22px 58px var(--shadow);
+}
+
+.kingdom-lead h2 {
+  margin-bottom: 8px;
+  font-size: clamp(32px, 5vw, 54px);
+}
+
+.kingdom-lead p:last-child,
+.officer-card p,
+.kingdom-note p {
+  color: var(--muted);
+}
+
+.rank-badge {
+  display: inline-grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 2px solid rgba(255, 224, 161, 0.72);
+  background:
+    radial-gradient(circle at 50% 24%, rgba(255, 224, 161, 0.32), transparent 34%),
+    linear-gradient(145deg, #8a6a24, #5f321d);
+  color: #fff0bc;
+  font-weight: 950;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.54);
+  clip-path: polygon(50% 0%, 90% 18%, 90% 72%, 50% 100%, 10% 72%, 10% 18%);
+}
+
+.rank-badge.large {
+  width: 86px;
+  height: 86px;
+  font-size: 28px;
+}
+
+.officer-avatar {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+  border: 2px solid rgba(216, 168, 79, 0.42);
+  border-radius: 50%;
+  background: #0d1215;
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.38),
+    0 0 20px rgba(216, 168, 79, 0.16);
+}
+
+.lead-avatar {
+  width: 132px;
+  height: 132px;
+  border-color: rgba(216, 168, 79, 0.72);
+}
+
+.kingdom-section {
+  padding-top: 46px;
+}
+
+.officer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.officer-card {
+  min-height: 126px;
+  display: grid;
+  grid-template-columns: 54px 86px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(145deg, rgba(86, 123, 98, 0.14), rgba(23, 32, 36, 0.96)),
+    var(--panel);
+  box-shadow: 0 18px 42px var(--shadow);
+}
+
+.officer-card h3 {
+  margin: 0;
+  font-size: 22px;
+  grid-column: 3;
+}
+
+.officer-card p {
+  margin: 0;
+  grid-column: 3;
+}
+
+.kingdom-note {
+  margin-top: 34px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.guides-page {
+  max-width: 1180px;
+}
+
+.guide-title {
+  padding-bottom: 16px;
+}
+
+.guide-band {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  align-items: end;
+  padding: 28px 0 38px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-band p,
+.guide-card p,
+.guide-list p,
+.guide-credit {
+  color: var(--muted);
+}
+
+.guide-category {
+  padding: 42px 0 0;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.guide-grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.guide-card {
+  min-height: 190px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(145deg, rgba(86, 123, 98, 0.16), rgba(23, 32, 36, 0.96)),
+    var(--panel);
+  box-shadow: 0 18px 42px var(--shadow);
+}
+
+.guide-card span,
+.guide-list strong {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.guide-card h3,
+.guide-list span {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.guide-card p,
+.guide-list p {
+  margin: 0;
+}
+
+.guide-list {
+  display: grid;
+  gap: 12px;
+}
+
+.guide-list article {
+  display: grid;
+  grid-template-columns: 42px 240px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.guide-credit {
+  margin-top: 42px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.guide-workbook {
+  margin-top: 54px;
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.guide-workbook-note {
+  max-width: 820px;
+  color: var(--muted);
+}
+
+.workbook-tools {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 22px 0;
+}
+
+.workbook-tools input {
+  width: min(440px, 100%);
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: #0d1215;
+  color: var(--text);
+  font: inherit;
+  padding: 10px 13px;
+}
+
+.workbook-sheets {
+  display: grid;
+  gap: 12px;
+}
+
+.workbook-sheet {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 18px 42px var(--shadow);
+}
+
+.workbook-sheet summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.workbook-sheet summary small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.workbook-body {
+  max-height: 620px;
+  overflow: auto;
+  border-top: 1px solid var(--line);
+}
+
+.workbook-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1px;
+  border-bottom: 1px solid rgba(238, 243, 236, 0.08);
+  background: rgba(238, 243, 236, 0.05);
+}
+
+.workbook-row span {
+  min-height: 36px;
+  padding: 8px 10px;
+  background: #11181c;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.workbook-row span:first-child {
+  color: var(--text);
+  font-weight: 760;
+}
+
+.workbook-empty {
+  color: var(--muted);
+}
+
+.guide-app {
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(32, 43, 47, 0.7), rgba(13, 18, 21, 0.96)),
+    var(--panel);
+  box-shadow: 0 24px 64px var(--shadow);
+}
+
+.guide-toolbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-toolbar h2 {
+  margin: 0;
+}
+
+.guide-search {
+  display: grid;
+  gap: 6px;
+  min-width: min(360px, 100%);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.guide-search input {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  background: #0d1215;
+  color: var(--text);
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.sheet-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: thin;
+}
+
+.sheet-tab {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid rgba(238, 243, 236, 0.14);
+  background: rgba(238, 243, 236, 0.05);
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sheet-tab:hover,
+.sheet-tab.active {
+  border-color: rgba(216, 168, 79, 0.75);
+  background: rgba(216, 168, 79, 0.16);
+  color: var(--text);
+}
+
+.sheet-meta {
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sheet-table-wrap {
+  width: 100%;
+  max-height: 72vh;
+  overflow: auto;
+  background: #091012;
+}
+
+.sheet-table {
+  min-width: calc(var(--sheet-cols, 8) * 150px);
+  width: max-content;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.sheet-table th,
+.sheet-table td {
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1px solid rgba(238, 243, 236, 0.1);
+  background: #10181b;
+  color: #d6e2dc;
+  line-height: 1.32;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.sheet-table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #263137;
+  color: #ffe0a1;
+  font-weight: 900;
+}
+
+.sheet-table tr.header-row td,
+.sheet-table tr.header-row th {
+  background: #202b2f;
+  color: #f2c979;
+  font-weight: 850;
+}
+
+.sheet-table tr.section-row td,
+.sheet-table tr.section-row th {
+  background: linear-gradient(90deg, rgba(159, 63, 52, 0.42), rgba(32, 43, 47, 0.94));
+  color: #fff3d8;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.sheet-table tr:nth-child(even):not(.header-row):not(.section-row) td {
+  background: #0d1518;
+}
+
+.sheet-table .empty-cell {
+  background: rgba(238, 243, 236, 0.025);
+}
+
+.guide-content {
+  padding: 22px;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(216, 168, 79, 0.08), transparent 28%),
+    #091012;
+}
+
+.guide-sheet-intro {
+  max-width: 820px;
+  margin-bottom: 22px;
+}
+
+.guide-sheet-intro h3 {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.guide-sheet-intro p {
+  color: var(--muted);
+}
+
+.guide-section-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.guide-section-card {
+  padding: 20px;
+  border: 1px solid rgba(238, 243, 236, 0.12);
+  background:
+    linear-gradient(145deg, rgba(32, 43, 47, 0.9), rgba(13, 18, 21, 0.96)),
+    var(--panel);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24);
+}
+
+.guide-section-card h3 {
+  margin-bottom: 14px;
+  color: #ffe0a1;
+  font-size: 21px;
+}
+
+.guide-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.guide-highlight {
+  padding: 14px;
+  border-left: 3px solid var(--gold);
+  background: rgba(216, 168, 79, 0.08);
+}
+
+.guide-highlight strong {
+  color: var(--text);
+}
+
+.guide-highlight p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.guide-notes {
+  display: grid;
+  gap: 9px;
+}
+
+.guide-notes p {
+  margin: 0;
+  color: #d6e2dc;
+}
+
+.guide-note-pair {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.32fr) 1fr;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(238, 243, 236, 0.045);
+}
+
+.guide-note-pair strong {
+  color: var(--gold);
+}
+
+.guide-note-pair span {
+  color: var(--muted);
+}
+
+.guide-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.guide-chip {
+  padding: 7px 10px;
+  border: 1px solid rgba(216, 168, 79, 0.32);
+  background: rgba(216, 168, 79, 0.09);
+  color: #ffe0a1;
+  font-size: 13px;
+  font-weight: 780;
+}
+
+.guide-matrix-wrap {
+  margin-top: 14px;
+  overflow-x: auto;
+  border: 1px solid rgba(238, 243, 236, 0.1);
+  background: #0b1215;
+}
+
+.guide-matrix {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.guide-matrix th,
+.guide-matrix td {
+  padding: 9px 10px;
+  border: 1px solid rgba(238, 243, 236, 0.08);
+  color: #d6e2dc;
+  text-align: left;
+  vertical-align: top;
+}
+
+.guide-matrix th,
+.guide-matrix .matrix-head td {
+  background: rgba(216, 168, 79, 0.13);
+  color: #ffe0a1;
+  font-weight: 860;
+}
+
+.guide-matrix tr:nth-child(even):not(.matrix-head) td {
+  background: rgba(238, 243, 236, 0.035);
+}
+
+.guide-matrix .empty {
+  background: rgba(238, 243, 236, 0.018);
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #0d1215;
+  color: var(--text);
+  font: inherit;
+  padding: 12px 13px;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px clamp(18px, 4vw, 54px);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    display: block;
+  }
+
+  .top-nav {
+    margin-top: 12px;
+  }
+
+  .feature-grid,
+  .content-grid,
+  .two-columns,
+  .media-grid,
+  .guide-grid,
+  .guide-grid.four,
+  .guide-band {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guide-list article {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .guide-list p {
+    grid-column: 2;
+  }
+
+  .officer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .brand {
+    min-width: 0;
+  }
+
+  .hero {
+    min-height: 620px;
+    align-items: end;
+    background:
+      linear-gradient(180deg, rgba(16, 22, 26, 0.18) 0%, rgba(16, 22, 26, 0.9) 58%, rgba(16, 22, 26, 0.98) 100%),
+      url("assets/hero-viking-guild.png") center / cover;
+  }
+
+  .feature-grid,
+  .content-grid,
+  .two-columns,
+  .media-grid,
+  .guide-grid,
+  .guide-grid.four,
+  .guide-band,
+  .timeline-item,
+  .rank-list article {
+    grid-template-columns: 1fr;
+  }
+
+  .kingdom-lead {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .officer-card {
+    grid-template-columns: 54px 86px 1fr;
+  }
+
+  .guide-list article {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-list p {
+    grid-column: auto;
+  }
+
+  .site-footer {
+    display: grid;
+  }
+
+  .rune-choice {
+    grid-template-columns: 1fr;
+  }
+
+  .rune-button {
+    min-height: 104px;
+  }
+
+  .workbook-tools {
+    display: grid;
+  }
+
+  .workbook-tools input {
+    width: 100%;
+  }
+
+  .guide-toolbar {
+    display: grid;
+  }
+
+  .guide-search {
+    min-width: 0;
+  }
+
+  .sheet-table {
+    font-size: 12px;
+  }
+
+  .sheet-table th,
+  .sheet-table td {
+    width: 132px;
+    min-width: 132px;
+    max-width: 132px;
+  }
+
+  .guide-content {
+    padding: 14px;
+  }
+
+  .guide-section-card {
+    padding: 16px;
+  }
+
+  .guide-note-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-matrix {
+    min-width: 620px;
+  }
+}
