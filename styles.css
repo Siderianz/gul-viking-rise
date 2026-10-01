@@ -32,6 +32,15 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(242, 201, 121, 0.9);
+  outline-offset: 3px;
+}
+
 .language-gate {
   position: fixed;
   inset: 0;
@@ -226,6 +235,10 @@ a {
   backdrop-filter: blur(14px);
 }
 
+.site-header > .top-nav {
+  flex: 1 1 auto;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -276,6 +289,34 @@ a {
 .top-nav a.active {
   border-color: rgba(216, 168, 79, 0.5);
   background: rgba(216, 168, 79, 0.12);
+  color: var(--text);
+}
+
+.language-switcher {
+  flex: 0 0 auto;
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(238, 243, 236, 0.16);
+  background: rgba(238, 243, 236, 0.06);
+}
+
+.language-switcher button {
+  min-width: 42px;
+  min-height: 34px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.language-switcher button:hover,
+.language-switcher button.active {
+  border-color: rgba(216, 168, 79, 0.58);
+  background: rgba(216, 168, 79, 0.14);
   color: var(--text);
 }
 
@@ -1093,10 +1134,12 @@ h3 {
 
 @media (max-width: 900px) {
   .site-header {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr auto;
   }
 
   .top-nav {
+    grid-column: 1 / -1;
     margin-top: 12px;
   }
 
@@ -1126,6 +1169,15 @@ h3 {
 @media (max-width: 620px) {
   .brand {
     min-width: 0;
+  }
+
+  .site-header {
+    grid-template-columns: 1fr;
+  }
+
+  .language-switcher {
+    width: max-content;
+    margin-top: 10px;
   }
 
   .hero {

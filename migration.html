@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Правила переезда, требования к игрокам и форма заявки на миграцию в гильдию Viking Rise.">
+    <meta property="og:title" content="Заявка на миграцию | Гильдия Viking Rise">
+    <meta property="og:description" content="Правила переезда, требования к игрокам и форма заявки на миграцию в гильдию Viking Rise.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/hero-viking-guild.png">
     <title>Заявка на миграцию | Гильдия Viking Rise</title>
+    <link rel="icon" type="image/png" href="assets/guild-logo-source.png">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -21,27 +27,27 @@
     </header>
     <main class="page">
       <section class="page-title">
-        <p class="eyebrow">Migration Request</p>
-        <h1>Заявка на миграцию</h1>
-        <p>Раздел для правил переезда, требований к игрокам и формы анкеты.</p>
+        <p class="eyebrow" data-i18n="migration.eyebrow">Заявка</p>
+        <h1 data-i18n="migration.title">Заявка на миграцию</h1>
+        <p data-i18n="migration.intro">Раздел для правил переезда, требований к игрокам и формы анкеты.</p>
       </section>
       <section class="content-grid two-columns">
         <article class="panel">
-          <h2>Требования</h2>
+          <h2 data-i18n="migration.requirementsTitle">Требования</h2>
           <ul>
-            <li>Минимальная сила игрока: указать позже.</li>
-            <li>Активность в событиях и войнах королевства.</li>
-            <li>Связь через Discord или другой основной канал.</li>
+            <li data-i18n="migration.reqPower">Минимальная сила игрока: указать позже.</li>
+            <li data-i18n="migration.reqActivity">Активность в событиях и войнах королевства.</li>
+            <li data-i18n="migration.reqContact">Связь через Discord или другой основной канал.</li>
           </ul>
         </article>
         <article class="panel">
-          <h2>Анкета</h2>
+          <h2 data-i18n="migration.formTitle">Анкета</h2>
           <form class="form" action="#" method="post">
-            <label>Игровой ник<input type="text" name="nickname" placeholder="Например: Ragnar"></label>
-            <label>ID игрока<input type="text" name="player-id" placeholder="Ваш ID"></label>
-            <label>Текущая сила<input type="text" name="power" placeholder="Например: 45M"></label>
-            <label>Комментарий<textarea name="comment" rows="4" placeholder="Опыт, часовой пояс, цели миграции"></textarea></label>
-            <button class="button primary" type="submit">Отправить заявку</button>
+            <label><span data-i18n="migration.nickname">Игровой ник</span><input type="text" name="nickname" placeholder="Например: Ragnar" data-placeholder-i18n="migration.nicknamePlaceholder"></label>
+            <label><span data-i18n="migration.playerId">ID игрока</span><input type="text" name="player-id" placeholder="Ваш ID" data-placeholder-i18n="migration.playerIdPlaceholder"></label>
+            <label><span data-i18n="migration.power">Текущая сила</span><input type="text" name="power" placeholder="Например: 45M" data-placeholder-i18n="migration.powerPlaceholder"></label>
+            <label><span data-i18n="migration.comment">Комментарий</span><textarea name="comment" rows="4" placeholder="Опыт, часовой пояс, цели миграции" data-placeholder-i18n="migration.commentPlaceholder"></textarea></label>
+            <button class="button primary" type="submit" data-i18n="migration.submit">Отправить заявку</button>
           </form>
         </article>
       </section>
