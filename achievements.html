@@ -12,12 +12,12 @@
     <link rel="icon" type="image/png" href="assets/guild-logo-source.png">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="achievements-page">
     <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark">VR</span><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.png" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
       <nav class="top-nav" aria-label="Основная навигация">
         <a href="index.html">Главная</a>
-        <a href="migration.html">Заявка на миграцию</a>
+        <a href="migration.html">Миграция</a>
         <a class="active" href="achievements.html">Достижения</a>
         <a href="media.html">Медиа</a>
         <a href="guides.html">Гайды</a>
@@ -26,18 +26,27 @@
       </nav>
     </header>
     <main class="page">
-      <section class="page-title">
+      <section class="unified-page-title page-title">
         <p class="eyebrow" data-i18n="achievements.eyebrow">Зал славы</p>
         <h1 data-i18n="achievements.title">Достижения</h1>
         <p data-i18n="achievements.intro">Место для побед, рекордов, сезонных результатов и важных дат гильдии.</p>
       </section>
-      <section class="timeline">
-        <article class="timeline-item"><span>01</span><h2 data-i18n="achievements.item1Title">Победа в событии</h2><p data-i18n="achievements.item1Text">Добавьте описание, дату, участников и скриншоты.</p></article>
-        <article class="timeline-item"><span>02</span><h2 data-i18n="achievements.item2Title">Рекорд силы</h2><p data-i18n="achievements.item2Text">Здесь можно вести общий прогресс гильдии и лучших игроков.</p></article>
-        <article class="timeline-item"><span>03</span><h2 data-i18n="achievements.item3Title">Союзное событие</h2><p data-i18n="achievements.item3Text">Отмечайте дипломатические успехи и совместные кампании.</p></article>
+      <section class="glory-waiting">
+        <span class="glory-seal" aria-hidden="true">✦</span>
+        <p class="eyebrow" data-i18n="achievements.waitLabel">Летопись пополняется</p>
+        <h2 data-i18n="achievements.waitTitle">Следующая победа займёт место здесь.</h2>
+        <p data-i18n="achievements.waitText">Мы собираем наши награды. Скоро здесь появятся знаки отличия гильдии, места в рейтингах событий и достигнутые рубежи.</p>
+        <span class="glory-divider" aria-hidden="true"></span>
+        <p class="glory-return" data-i18n="achievements.waitReturn">Возвращайся. Слава не заставит себя ждать.</p>
       </section>
     </main>
     <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Летопись побед</span></footer>
-    <script src="script.js"></script>
-  </body>
+    <script src="languages.js"></script><script src="script.js"></script>
+  <script src="page-transitions.js"></script></body>
 </html>
+
+
+
+
+
+

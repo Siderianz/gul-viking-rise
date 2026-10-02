@@ -14,10 +14,10 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html"><span class="brand-mark">VR</span><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.png" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
       <nav class="top-nav" aria-label="Основная навигация">
         <a href="index.html">Главная</a>
-        <a href="migration.html">Заявка на миграцию</a>
+        <a href="migration.html">Миграция</a>
         <a href="achievements.html">Достижения</a>
         <a href="media.html">Медиа</a>
         <a href="guides.html">Гайды</a>
@@ -27,7 +27,7 @@
     </header>
 
     <main class="page kingdom-page">
-      <section class="page-title">
+      <section class="unified-page-title page-title">
         <p class="eyebrow" data-i18n="kingdom.eyebrow">Структура</p>
         <h1 data-i18n="kingdom.title">Структура королевства</h1>
         <p data-i18n="kingdom.intro">Состав руководства гильдии: лидер R5 и офицеры R4.</p>
@@ -35,11 +35,12 @@
 
       <section class="kingdom-lead">
         <div class="rank-badge large">R5</div>
-        <img class="officer-avatar lead-avatar" src="assets/officers/the-punisher.png" alt="The Punisher">
+        <div class="leader-emblem"><div class="portrait-crop leader-portrait"><img class="officer-avatar lead-avatar" src="assets/officers/the-punisher-original.png" alt="The Punisher"></div></div>
         <div>
           <p class="eyebrow" data-i18n="kingdom.leaderEyebrow">Лидер гильдии</p>
           <h2>The Punisher</h2>
-          <p data-i18n="kingdom.leaderText">Главный лидер гильдии. Приоритетные решения, стратегия, дипломатия и финальное слово по ключевым вопросам.</p>
+          <p data-i18n="kingdom.leaderText">У руля GUL. Заключает союзы, ведёт гильдию в бой и определяет курс королевства.</p>
+          <a class="button primary" href="https://t.me/siderian" target="_blank" rel="noopener noreferrer" data-i18n="kingdom.leaderContact">Написать лидеру</a>
         </div>
       </section>
 
@@ -51,37 +52,37 @@
         <div class="officer-grid">
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/thor-husky.png" alt="THOR HUSKY">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/thor-husky-original.png" alt="THOR HUSKY"></div>
             <h3>THOR HUSKY</h3>
           </article>
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/rocketstar.png" alt="RocketStar">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/rocketstar-original.png" alt="RocketStar"></div>
             <h3>RocketStar</h3>
           </article>
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/winter-sandor.png" alt="Winter Sandor">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/winter-sandor-original.png" alt="Winter Sandor"></div>
             <h3>Winter Sandor</h3>
           </article>
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/surtur.png" alt="SuRTuR">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/surtur-original.png" alt="SuRTuR"></div>
             <h3>SuRTuR</h3>
           </article>
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/bereza.png" alt="береза">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/bereza-original.png" alt="береза"></div>
             <h3>береза</h3>
           </article>
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/hellkatz.png" alt="HellKatz">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/hellkatz-original.png" alt="HellKatz"></div>
             <h3>HellKatz</h3>
           </article>
           <article class="officer-card">
             <span class="rank-badge">R4</span>
-            <img class="officer-avatar" src="assets/officers/janefoster.png" alt="JaneFoster">
+            <div class="portrait-crop"><img class="officer-avatar" src="assets/officers/janefoster.png" alt="JaneFoster"></div>
             <h3>JaneFoster</h3>
           </article>
         </div>
@@ -94,6 +95,16 @@
     </main>
 
     <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Порядок в королевстве</span></footer>
-    <script src="script.js"></script>
-  </body>
+    <script src="languages.js"></script><script src="script.js"></script>
+  <script src="page-transitions.js"></script></body>
 </html>
+
+
+
+
+
+
+
+
+
+

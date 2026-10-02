@@ -14,36 +14,52 @@
   </head>
   <body>
     <div class="language-gate" data-language-gate>
+      <div class="cinematic-harbor" aria-hidden="true">
+        <div class="living-sea"></div>
+        <div class="living-waterfall"></div>
+        <div class="living-boat"></div>
+        <div class="harbor-fire fire-hall"></div>
+        <div class="harbor-fire fire-dock"></div>
+        <div class="harbor-fire fire-shore"></div>
+        <div class="roof-smoke smoke-great-hall"><i></i><i></i><i></i></div>
+        <div class="roof-smoke smoke-dock-house"><i></i><i></i><i></i></div>
+        <div class="house-light light-upper-hall"></div>
+        <div class="house-light light-dock-house"></div>
+        <div class="brazier-light"></div>
+      </div>
+      <div class="cinematic-fog" aria-hidden="true"></div>
       <div class="gate-backdrop"></div>
       <section class="gate-panel" aria-label="Language selection">
         <div class="gate-logo-wrap">
           <img class="gate-logo" src="assets/guild-logo-cutout.png" alt="GUL" onerror="this.classList.add('is-missing')" />
           <div class="gate-logo-fallback">GUL</div>
         </div>
+        <p class="cinematic-intro" data-i18n="intro.tagline">Every legend begins here.</p>
+        <div class="language-choice-block">
+          <p class="language-question" data-i18n="intro.languageQuestion">In which tongue shall your saga be told?</p>
         <div class="rune-choice" aria-label="Выбор языка">
           <button class="rune-button" type="button" data-lang-choice="ru" aria-label="Открыть сайт на русском">
-            <span class="rune-symbol">&#x16B1;</span>
-            <span>Русский</span>
+            <span class="choice-saga" lang="ru">Пусть моя сага звучит на русском.</span>
           </button>
           <button class="rune-button" type="button" data-lang-choice="en" aria-label="Open site in English">
-            <span class="rune-symbol">&#x16D6;</span>
-            <span>English</span>
+            <span class="choice-saga" lang="en">Let my saga unfold in English.</span>
           </button>
+        </div>
         </div>
       </section>
     </div>
 
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Главная страница гильдии">
-        <span class="brand-mark">VR</span>
+        <img class="brand-emblem" src="assets/guild-logo-cutout.png" alt="GUL">
         <span>
-          <strong data-i18n="brand.title">Гильдия Viking Rise</strong>
-          <small data-i18n="brand.subtitle">Королевство, рейды, союзники</small>
+          <strong data-i18n="brand.title">GUL • Viking Rise</strong>
+          <small data-i18n="brand.subtitle">Одна гильдия. Одна сага.</small>
         </span>
       </a>
       <nav class="top-nav" aria-label="Основная навигация">
         <a class="active" href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="migration.html" data-i18n="nav.migration">Заявка на миграцию</a>
+        <a href="migration.html" data-i18n="nav.migration">Миграция</a>
         <a href="achievements.html" data-i18n="nav.achievements">Достижения</a>
         <a href="media.html" data-i18n="nav.media">Медиа</a>
         <a href="guides.html" data-i18n="nav.guides">Гайды</a>
@@ -53,56 +69,64 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero harbor-hero battlefield-hero">
+        <div class="harbor-scene" aria-hidden="true">
+          <div class="battlefield-smoke"></div>
+          <div class="harbor-embers"></div>
+        </div>
         <div class="hero-content">
-          <p class="eyebrow" data-i18n="home.eyebrow">Viking Rise Guild Hub</p>
-          <h1 data-i18n="home.heroTitle">Дом гильдии для набора, координации и общей истории.</h1>
+          <h1 data-i18n="home.heroTitle">Стоим вместе. Восходим к легенде.</h1>
           <p data-i18n="home.heroText">
             Здесь будет центр вашей гильдии: заявки для новых игроков, победы,
             медиаархив, полезные гайды, структура королевства и быстрые ссылки.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="migration.html" data-i18n="home.apply">Подать заявку</a>
-            <a class="button" href="guides.html" data-i18n="home.guides">Открыть гайды</a>
-          </div>
         </div>
+        <div class="hero-emblem"><img src="assets/guild-logo-cutout.png" alt="GUL guild emblem"></div>
       </section>
 
       <section class="section">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="home.sectionsEyebrow">Разделы</p>
-          <h2 data-i18n="home.sectionsTitle">Навигация по штабу</h2>
+        <div class="section-heading course-heading">
+          <span class="course-compass" aria-hidden="true">✦</span>
+          <p class="eyebrow" data-i18n="home.sectionsEyebrow">За вратами</p>
+          <h2 data-i18n="home.sectionsTitle">Выбери свой курс</h2>
+          <p class="course-intro" data-i18n="home.sectionsIntro">Встань в строй. Вспомни битвы. Найди свой следующий шаг.</p>
+          <span class="course-scroll" aria-hidden="true">⌄</span>
         </div>
         <div class="feature-grid">
-          <article class="feature-card">
-            <h3 data-i18n="cards.migrationTitle">Заявка на миграцию</h3>
-            <p data-i18n="cards.migrationText">Требования, анкета кандидата и статус рассмотрения.</p>
-            <a href="migration.html" data-i18n="cards.open">Перейти</a>
+          <article class="feature-card announcement-home-card">
+            <h3 data-i18n="cards.announcementsTitle">Следи за сигналом</h3>
+            <p data-i18n="cards.announcementsText">События, напоминания и вести из чертогов. Будь готов к следующему шагу GUL.</p>
+            <a href="announcements.html" data-i18n="cards.announcementsAction">Читать объявления</a>
           </article>
           <article class="feature-card">
-            <h3 data-i18n="cards.achievementsTitle">Достижения</h3>
-            <p data-i18n="cards.achievementsText">Вехи королевства, победы, рейтинги и важные даты.</p>
-            <a href="achievements.html" data-i18n="cards.open">Перейти</a>
+            <h3 data-i18n="cards.migrationTitle">Держи курс на GUL</h3>
+            <p data-i18n="cards.migrationText">Новые берега. Надёжные союзники. Найди своё место в наших рядах — узнай требования и подай заявку на переход.</p>
+            <a href="migration.html" data-i18n="cards.migrationAction">Встать в строй</a>
           </article>
           <article class="feature-card">
-            <h3 data-i18n="cards.mediaTitle">Медиа</h3>
-            <p data-i18n="cards.mediaText">Скриншоты, видео, афиши событий и галерея битв.</p>
-            <a href="media.html" data-i18n="cards.open">Перейти</a>
+            <h3 data-i18n="cards.achievementsTitle">Слава, добытая в бою</h3>
+            <p data-i18n="cards.achievementsText">Трофеи, добытые в бою. Победы, вписанные в нашу историю. След, который мы оставляем.</p>
+            <a href="achievements.html" data-i18n="cards.achievementsAction">Наши победы</a>
           </article>
           <article class="feature-card">
-            <h3 data-i18n="cards.guidesTitle">Гайды</h3>
-            <p data-i18n="cards.guidesText">Сборки, развитие, PvP, события и памятки для новичков.</p>
-            <a href="guides.html" data-i18n="cards.open">Перейти</a>
+            <h3 data-i18n="cards.mediaTitle">Сквозь огонь и фьорды</h3>
+            <p data-i18n="cards.mediaText">Алые паруса. Поднятые щиты. Незабываемые битвы. Взгляни на GUL глазами наших воинов.</p>
+            <a href="media.html" data-i18n="cards.mediaAction">Открыть галерею</a>
           </article>
           <article class="feature-card">
-            <h3 data-i18n="cards.kingdomTitle">Структура королевства</h3>
-            <p data-i18n="cards.kingdomText">Альянсы, роли, дипломатия и зоны ответственности.</p>
-            <a href="kingdom.html" data-i18n="cards.open">Перейти</a>
+            <h3 data-i18n="cards.guidesTitle">Отточи своё мастерство</h3>
+            <p data-i18n="cards.guidesText">Прежде чем опустится топор, битва уже спланирована. Набирай силу и учись бить точно.</p>
+            <a href="guides.html" data-i18n="cards.guidesAction">К военному столу</a>
           </article>
           <article class="feature-card">
-            <h3 data-i18n="cards.contactsTitle">Контакты и ссылки</h3>
-            <p data-i18n="cards.contactsText">Discord, игровые координаты, лидеры и внешние ресурсы.</p>
-            <a href="contacts.html" data-i18n="cards.open">Перейти</a>
+            <h3 data-i18n="cards.kingdomTitle">Чертоги GUL</h3>
+            <p data-i18n="cards.kingdomText">За стеной щитов стоят те, кто ведёт вперёд. Познакомься с хранителями нашего королевства.</p>
+            <a href="kingdom.html" data-i18n="cards.kingdomAction">Наши лидеры</a>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="cards.contactsTitle">Отправь ворона</h3>
+            <p data-i18n="cards.contactsText">Даже за фьордами наши чертоги рядом. Обратись с вопросом, предложением или желанием вступить в наши ряды.</p>
+            <a href="contacts.html" data-i18n="cards.contactsAction">Связаться</a>
           </article>
         </div>
       </section>
@@ -112,6 +136,16 @@
       <span data-i18n="brand.title">Гильдия Viking Rise</span>
       <span data-i18n="footer.note">Скелет сайта для дальнейшего наполнения</span>
     </footer>
-    <script src="script.js"></script>
-  </body>
+    <script src="languages.js"></script><script src="script.js"></script>
+  <script src="page-transitions.js"></script></body>
 </html>
+
+
+
+
+
+
+
+
+
+

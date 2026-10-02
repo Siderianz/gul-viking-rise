@@ -232,21 +232,12 @@
     const rows = section.rows.filter((row) => filled(row).length);
     if (!rows.length) return block;
 
-    const highlights = renderHighlights(rows);
-    if (highlights) block.appendChild(highlights);
 
-    const tabularRows = rows.filter(rowLooksTabular);
-    const simpleRows = rows.filter((row) => !rowLooksTabular(row));
-    const isLibrary = /library/i.test(sheetName) || section.title === "Links:";
 
-    if (isLibrary) {
-      block.appendChild(renderChips(rows));
-      return block;
-    }
-
-    if (simpleRows.length) block.appendChild(renderTextRows(simpleRows));
-    if (tabularRows.length) block.appendChild(renderMatrix(tabularRows));
-
+    // Keep every row in its original order, including repeated library entries.
+    const isTable = rows.some(rowLooksTabular);
+    if (isTable) block.appendChild(renderMatrix(rows));
+    else block.appendChild(renderTextRows(rows));
     return block;
   }
 
@@ -270,10 +261,10 @@
 
     indexes.forEach((index) => {
       const sheet = data.sheets[index];
-      const button = make("button", "sheet-tab", labelSheet(sheet.name));
-      button.type = "button";
-      button.role = "tab";
-      button.ariaSelected = String(index === activeIndex);
+      const button = make("option", "", labelSheet(sheet.name));
+      button.value = String(index);
+
+      button.selected = index === activeIndex;
       if (index === activeIndex) button.classList.add("active");
       button.addEventListener("click", () => {
         activeIndex = index;
@@ -284,31 +275,65 @@
     });
 
     if (!indexes.length) {
-      tabsRoot.appendChild(make("p", "workbook-empty", ui[currentLang].noResults));
+      tabsRoot.appendChild(make("option", "", ui[currentLang].noResults));
     }
   }
 
   function renderSheet() {
+    if (!visibleSheetIndexes(search.value).length) {
+      title.textContent = ui[currentLang].noResults;
+      meta.textContent = "";
+      content.textContent = "";
+      return;
+    }
     const sheet = data.sheets[activeIndex] || data.sheets[0];
-    const rows = sheet.rows || [];
+    const query = search.value.trim().toLowerCase();
+    const sourceRows = sheet.rows || [];
+    const rows = sourceRows;
     const sections = buildSections(rows);
+    if (query && !rows.length) {
+      title.textContent = labelSheet(sheet.name);
+      meta.textContent = ui[currentLang].noResults;
+      content.textContent = ui[currentLang].noResults;
+      return;
+    }
 
     title.textContent = labelSheet(sheet.name);
     meta.textContent = `${sections.length} ${ui[currentLang].sections} · ${rows.length} ${ui[currentLang].rows} ${data.source}`;
     content.textContent = "";
 
-    const intro = make("div", "guide-sheet-intro");
-    intro.appendChild(make("h3", "", labelSheet(sheet.name)));
-    intro.appendChild(make("p", "", ui[currentLang].intro));
-    content.appendChild(intro);
+
 
     const grid = make("div", "guide-section-stack");
     sections.forEach((section) => {
       grid.appendChild(renderSection(section, sheet.name));
     });
     content.appendChild(grid);
+    if (query) {
+      const walker = document.createTreeWalker(grid, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        const text = node.textContent;
+        const lower = text.toLowerCase();
+        if (!lower.includes(query)) return;
+        const fragment = document.createDocumentFragment();
+        let start = 0, match;
+        while ((match = lower.indexOf(query, start)) !== -1) {
+          fragment.appendChild(document.createTextNode(text.slice(start, match)));
+          fragment.appendChild(make("mark", "guide-match", text.slice(match, match + query.length)));
+          start = match + query.length;
+        }
+        fragment.appendChild(document.createTextNode(text.slice(start)));
+        node.replaceWith(fragment);
+      });
+    }
   }
 
+  tabsRoot.addEventListener("change", () => {
+    activeIndex = Number(tabsRoot.value);
+    renderSheet();
+  });
   search?.addEventListener("input", () => {
     renderTabs(search.value);
     renderSheet();
@@ -323,3 +348,7 @@
   renderTabs();
   renderSheet();
 })();
+
+
+
+
