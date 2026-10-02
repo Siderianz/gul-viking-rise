@@ -7,14 +7,14 @@
     <meta property="og:title" content="Заявка на миграцию | Гильдия Viking Rise">
     <meta property="og:description" content="Правила переезда, требования к игрокам и форма заявки на миграцию в гильдию Viking Rise.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/hero-viking-guild.png">
+    <meta property="og:image" content="assets/hero-viking-guild.webp">
     <title>Заявка на миграцию | Гильдия Viking Rise</title>
-    <link rel="icon" type="image/png" href="assets/guild-logo-source.png">
+    <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
     <link rel="stylesheet" href="styles.css">
-  <link rel="preload" as="image" href="assets/section-migration.png" fetchpriority="high"></head>
-  <body class="migration-page"><div class="scene-loading" role="status" aria-label="Loading"><span class="scene-loading-ring" aria-hidden="true"></span><span>GUL</span></div>
+  <link rel="preload" as="image" href="assets/section-migration.webp" fetchpriority="high"></head>
+  <body class="migration-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
-      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.png" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
       <nav class="top-nav" aria-label="Основная навигация">
         <a href="index.html">Главная</a>
         <a class="active" href="migration.html">Миграция</a>
@@ -30,7 +30,7 @@
         <p class="eyebrow" data-i18n="migration.eyebrow">Заявка</p>
         <h1 data-i18n="migration.title">Заявка на миграцию</h1>
         <p data-i18n="migration.intro">Раздел для правил переезда, требований к игрокам и формы анкеты.</p>
-      </section>
+      <a class="button primary migration-jump" href="#application" data-i18n="migration.jump">Go to application</a></section>
       <section class="content-grid two-columns">
         <article class="panel">
           <h2 data-i18n="migration.requirementsTitle">Требования</h2>
@@ -39,17 +39,17 @@
             <li data-i18n="migration.reqActivity">Активность в событиях и войнах королевства.</li>
             <li data-i18n="migration.reqContact">Связь через Discord или другой основной канал.</li>
             <li data-i18n="migration.reqRecord">Приходи с чистой репутацией: без предательств, травли и намеренного вреда в прежнем королевстве.</li>
-          </ul>
+          </ul><a class="button" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="migration.eligibility">Ask about eligibility</a>
         </article>
         <article class="panel">
           <h2 data-i18n="migration.formTitle">Анкета</h2>
-          <form class="form" data-migration-form action="#" method="post">
-            <label><span data-i18n="migration.nickname">Игровой ник</span><input type="text" name="nickname" required maxlength="100" placeholder="Например: Ragnar" data-placeholder-i18n="migration.nicknamePlaceholder"></label>
-            <label><span data-i18n="migration.playerId">ID игрока</span><input type="text" name="player-id" required maxlength="100" placeholder="Ваш ID" data-placeholder-i18n="migration.playerIdPlaceholder"></label>
-            <label><span data-i18n="migration.power">Текущая сила</span><input type="text" name="power" required maxlength="100" placeholder="Например: 45M" data-placeholder-i18n="migration.powerPlaceholder"></label>
+          <form id="application" class="form" data-migration-form action="#" method="post">
+            <label><span data-i18n="migration.nickname">Игровой ник</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="nickname" autocomplete="nickname" required aria-required="true" maxlength="100" placeholder="Например: Ragnar" data-placeholder-i18n="migration.nicknamePlaceholder"></label>
+            <label><span data-i18n="migration.playerId">ID игрока</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="player-id" inputmode="numeric" required aria-required="true" maxlength="100" placeholder="Ваш ID" data-placeholder-i18n="migration.playerIdPlaceholder"></label>
+            <label><span data-i18n="migration.power">Текущая сила</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="power" required aria-required="true" maxlength="100" placeholder="Например: 45M" data-placeholder-i18n="migration.powerPlaceholder"></label>
             <label><span data-i18n="migration.comment">Комментарий</span><textarea name="comment" maxlength="2000" rows="4" placeholder="Опыт, часовой пояс, цели миграции" data-placeholder-i18n="migration.commentPlaceholder"></textarea></label>
             <button class="button primary" type="submit" data-i18n="migration.submit">Отправить заявку</button>
-          <label hidden aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><p role="status" aria-live="polite"></p></form>
+          <p class="form-help" data-i18n="migration.deliveryHelp">Google opens a confirmation page. Without confirmation, contact leadership on Discord.</p><a class="form-support" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="actions.discord">Open Discord</a><label hidden aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><p role="status" aria-live="polite"></p></form>
         </article>
       </section>
     </main>
@@ -57,6 +57,12 @@
     <script src="languages.js"></script><script src="script.js"></script><script src="migration-config.js"></script><script src="migration-form.js"></script>
   <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
 </html>
+
+
+
+
+
+
 
 
 

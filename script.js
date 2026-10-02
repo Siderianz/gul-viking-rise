@@ -364,6 +364,10 @@ const socialCopy = {
 Object.entries(socialCopy).forEach(([lang,copy]) => {
  Object.assign(translations[lang], {'nav.contacts':copy[0],'contacts.eyebrow':copy[1],'contacts.title':copy[2],'contacts.intro':copy[3],'contacts.youtubeTitle':'YouTube','contacts.youtubeText':copy[4],'contacts.youtubeStatus':copy[5],'cards.contactsTitle':copy[2],'cards.contactsText':copy[3],'cards.contactsAction':copy[0],'meta.contactsTitle':copy[0]+' | GUL','meta.contactsDescription':copy[3]});
 });
+
+const reviewCopy = {"en": ["Apply to GUL", "Open Discord", "Coming soon", "Ask about eligibility", "Go to application", "Required", "Applications open a Google confirmation page. If it does not confirm receipt, contact leadership on Discord.", "Viking Rise guild website"], "ru": ["Подать заявку в GUL", "Открыть Discord", "Скоро", "Уточнить требования", "Перейти к анкете", "Обязательно", "После отправки откроется подтверждение Google. Если получение не подтверждено, свяжитесь с лидерами в Discord.", "Сайт гильдии Viking Rise"], "vi": ["Đăng ký GUL", "Mở Discord", "Sắp ra mắt", "Hỏi về điều kiện", "Đến đơn đăng ký", "Bắt buộc", "Google sẽ mở trang xác nhận. Nếu chưa có xác nhận, hãy liên hệ lãnh đạo trên Discord.", "Trang web bang hội Viking Rise"], "tr": ["GUL’a başvur", "Discord’u aç", "Yakında", "Katılım koşullarını sor", "Başvuruya git", "Zorunlu", "Google onay sayfası açılır. Alındığı onaylanmazsa Discord üzerinden yönetime ulaşın.", "Viking Rise lonca sitesi"], "fr": ["Postuler à GUL", "Ouvrir Discord", "Bientôt", "Demander les conditions", "Accéder au formulaire", "Obligatoire", "Une page de confirmation Google s’ouvrira. Sans confirmation de réception, contactez les dirigeants sur Discord.", "Site de guilde Viking Rise"], "id": ["Daftar ke GUL", "Buka Discord", "Segera hadir", "Tanyakan persyaratan", "Ke formulir", "Wajib", "Halaman konfirmasi Google akan terbuka. Jika penerimaan belum dikonfirmasi, hubungi pemimpin melalui Discord.", "Situs guild Viking Rise"]};
+Object.entries(reviewCopy).forEach(([lang,values]) => Object.assign(translations[lang], Object.fromEntries(["actions.apply", "actions.discord", "status.soon", "migration.eligibility", "migration.jump", "form.required", "migration.deliveryHelp", "home.footer"].map((key,index)=>[key,values[index]]))));
+
 function currentPage() {
   const file = location.pathname.split("/").pop() || "index.html";
   return pages.find((page) => page.href === file) || pages[0];
@@ -381,7 +385,7 @@ function renderSharedLayout() {
   if (header) {
     header.innerHTML = `
       <a class="brand" href="index.html" data-i18n-aria-label="layout.homeAria">
-        <img class="brand-emblem" src="assets/guild-logo-cutout.png" alt="GUL">
+        <img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL">
         <span>
           <strong data-i18n="brand.title">Гильдия Viking Rise</strong>
           <small data-i18n="brand.subtitle">Королевство, рейды, союзники</small>
@@ -389,7 +393,7 @@ function renderSharedLayout() {
       </a>
       <nav class="top-nav" data-i18n-aria-label="layout.navAria">
         ${pages.map((item) => `
-          <a href="${item.href}" class="${item.id === page.id ? "active" : ""}" data-i18n="${item.navKey}">${t("ru", item.navKey)}</a>
+          <a href="${item.href}" class="${item.id === page.id ? "active" : ""}" ${item.id === page.id ? 'aria-current="page"' : ""} data-i18n="${item.navKey}">${t("ru", item.navKey)}</a>
         `).join("")}
       </nav>
       <div class="language-switcher" data-i18n-aria-label="layout.language" role="group">
@@ -422,7 +426,7 @@ function ensureHeadLinks() {
     const icon = document.createElement("link");
     icon.rel = "icon";
     icon.type = "image/png";
-    icon.href = "assets/guild-logo-source.png";
+    icon.href = "assets/guild-logo-source.webp";
     document.head.appendChild(icon);
   }
 }
@@ -437,7 +441,7 @@ function applyMeta(lang) {
   ensureMeta("property", "og:title", title);
   ensureMeta("property", "og:description", description);
   ensureMeta("property", "og:type", "website");
-  ensureMeta("property", "og:image", "assets/hero-viking-guild.png");
+  ensureMeta("property", "og:image", "assets/hero-viking-guild.webp");
 }
 
 function applyLanguage(lang) {
@@ -497,31 +501,36 @@ function resolveInitialLanguage() {
 }
 
 function initLanguageGate() {
-  const gate = document.querySelector("[data-language-gate]");
+  const gate = document.querySelector('[data-language-gate]');
   const savedLanguage = resolveInitialLanguage();
-
   applyLanguage(savedLanguage);
-
   if (!gate) return;
-  if (sessionStorage.getItem("guildWelcomeSeen") === "1") {
-    gate.hidden = true;
-    gate.inert = true;
-    return;
-  }
-
-  const choices = gate.querySelector('[data-lang-choice]')?.parentElement;
-  if (choices) {
-    choices.innerHTML = Object.entries(languageNames).map(([code,name]) => `<button class="rune-button" type="button" data-lang-choice="${code}" aria-label="${name}">${name}</button>`).join('');
-  }
-  document.body.classList.add("has-language-gate");
-  document.querySelectorAll("[data-lang-choice]").forEach((button) => {
-    button.addEventListener("click", () => {
-      sessionStorage.setItem("guildWelcomeSeen", "1");
-      applyLanguage(button.dataset.langChoice);
-      gate.classList.add("is-hidden");
-      document.body.classList.remove("has-language-gate");
-    });
+  if (sessionStorage.getItem('guildWelcomeSeen') === '1') { gate.hidden=true; gate.inert=true; return; }
+  const choices=gate.querySelector('[data-lang-choice]')?.parentElement;
+  if (choices) choices.innerHTML=Object.entries(languageNames).map(([code,name]) => `<button class="rune-button" type="button" data-lang-choice="${code}" aria-label="${name}">${name}</button>`).join('');
+  gate.setAttribute('role','dialog'); gate.setAttribute('aria-modal','true'); gate.setAttribute('aria-label','Choose your language');
+  const background=Array.from(document.body.children).filter(node=>node!==gate && node.tagName!=='SCRIPT' && !node.classList.contains('scene-loading'));
+  const previous=background.map(node=>node.inert);
+  background.forEach(node=>node.inert=true);
+  document.body.classList.add('has-language-gate');
+  const close=(lang)=>{
+    sessionStorage.setItem('guildWelcomeSeen','1'); applyLanguage(lang);
+    gate.hidden=true; gate.inert=true;
+    background.forEach((node,i)=>node.inert=previous[i]);
+    document.body.classList.remove('has-language-gate');
+    document.querySelector('[data-language-select]')?.focus({preventScroll:true});
+  };
+  const buttons=Array.from(gate.querySelectorAll('[data-lang-choice]'));
+  buttons.forEach(button=>button.addEventListener('click',()=>close(button.dataset.langChoice)));
+  gate.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){event.preventDefault();close(savedLanguage);}
+    if(event.key==='Tab'){
+      const first=buttons[0],last=buttons[buttons.length-1];
+      if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+    }
   });
+  buttons[0]?.focus({preventScroll:true});
 }
 
 ensureHeadLinks();
