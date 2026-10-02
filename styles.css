@@ -2645,10 +2645,10 @@ body:has(.battlefield-hero) .section-heading.course-heading { border:0; }
 @media(max-width:800px) { .kingdom-page .portrait-crop.leader-portrait { width:140px; height:140px; } }
 @media(max-width:540px) { .kingdom-page .portrait-crop.leader-portrait { margin:auto; } .kingdom-page .portrait-crop { width:90px; height:90px; } }
 .kingdom-page .portrait-crop .officer-avatar { transform:scale(1.95); transform-origin:50% 43%; }
-.kingdom-page .portrait-crop img[src$="-original.png"] { transform:none; object-fit:cover; object-position:center 25%; }
-.kingdom-page .portrait-crop img[src$="winter-sandor-original.png"] { object-position:center 18%; }
-.kingdom-page .portrait-crop img[src$="bereza-original.png"] { transform:scale(1.3); transform-origin:50% 50%; object-position:center; }
-.kingdom-page .portrait-crop img[src$="hellkatz-original.png"] { transform:scale(1.6); transform-origin:50% 25%; object-position:center; }
+.kingdom-page .portrait-crop img[src$="-original.webp"] { transform:none; object-fit:cover; object-position:center 25%; }
+.kingdom-page .portrait-crop img[src$="winter-sandor-original.webp"] { object-position:center 18%; }
+.kingdom-page .portrait-crop img[src$="bereza-original.webp"] { transform:scale(1.3); transform-origin:50% 50%; object-position:center; }
+.kingdom-page .portrait-crop img[src$="hellkatz-original.webp"] { transform:scale(1.6); transform-origin:50% 25%; object-position:center; }
 /* A balanced council roster with portraits as the focus. */
 .kingdom-page .kingdom-section > .section-heading {
  flex-direction:column; align-items:center; text-align:center; gap:8px; margin:0 0 28px;
@@ -3169,3 +3169,4 @@ main.page .panel,main.page .guide-link-group { min-width:0; }
   .notice-categories { gap:12px; }
   .notice-categories article { padding:18px; }
 }
+
