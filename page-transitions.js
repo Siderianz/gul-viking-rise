@@ -1,6 +1,7 @@
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const page = document.querySelector('main');
+  const blur = matchMedia('(min-width:1024px)').matches ? 'blur(2px)' : 'blur(12px)';
   const key = 'gulPageSlide';
   const incoming = sessionStorage.getItem(key);
   sessionStorage.removeItem(key);
@@ -8,7 +9,7 @@
   let leaving = false;
   if (incoming) {
     page.animate([
-      { opacity: 0, filter: 'blur(12px)', transform: `translateX(${incoming === 'back' ? '-40px' : '40px'})` },
+      { opacity: 0, filter: blur, transform: `translateX(${incoming === 'back' ? '-40px' : '40px'})` },
       { opacity: 1, filter: 'blur(0px)', transform: 'translateX(0)' }
     ], { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' });
   }
@@ -30,7 +31,7 @@
     document.head.appendChild(preload);
     page.animate([
       { opacity: 1, filter: 'blur(0px)', transform: 'translateX(0)' },
-      { opacity: 0, filter: 'blur(12px)', transform: `translateX(${back ? '40px' : '-40px'})` }
+      { opacity: 0, filter: blur, transform: `translateX(${back ? '40px' : '-40px'})` }
     ], { duration: 320, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'forwards' }).finished.then(() => location.assign(url.href));
   });
   window.addEventListener('pageshow', event => {
@@ -40,4 +41,5 @@
     }
   });
 })();
+
 
