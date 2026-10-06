@@ -13246,3 +13246,92 @@ body.guides-overhaul .guide-action-row .button.guide-action-tile:not(.primary) s
     letter-spacing: .025em !important;
   }
 }
+/* preview homepage hero clean poster fit */
+@media (max-width: 760px) {
+  body.home-overhaul .harbor-hero,
+  body.home-overhaul .hero.harbor-hero,
+  body.home-overhaul:has(.harbor-hero) .hero.harbor-hero {
+    min-height: calc(100dvh - 132px) !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 0 16px 18px !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-color: #020707 !important;
+  }
+  body.home-overhaul .harbor-hero::before,
+  body.home-overhaul .hero.harbor-hero::before,
+  body.home-overhaul:has(.harbor-hero) .hero.harbor-hero::before {
+    display: none !important;
+  }
+  body.home-overhaul .harbor-hero .hero-content,
+  body.home-overhaul:has(.harbor-hero) .hero-content {
+    width: min(100%, 270px) !important;
+    max-width: 270px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    text-align: center !important;
+  }
+  body.home-overhaul .harbor-hero h1,
+  body.home-overhaul .harbor-hero p,
+  body.home-overhaul:has(.harbor-hero) .hero-content h1,
+  body.home-overhaul:has(.harbor-hero) .hero-content p {
+    display: none !important;
+  }
+  body.home-overhaul .harbor-hero .hero-actions,
+  body.home-overhaul:has(.harbor-hero) .hero-actions {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    margin: 0 auto !important;
+  }
+  body.home-overhaul .harbor-hero .button,
+  body.home-overhaul:has(.harbor-hero) .hero-actions .button {
+    min-height: 42px !important;
+    border-radius: 18px !important;
+    padding: 11px 16px !important;
+    font-size: 11px !important;
+    letter-spacing: .14em !important;
+    background: rgba(5, 12, 12, .70) !important;
+    border: 1px solid rgba(216,174,88,.38) !important;
+    color: #f7e8be !important;
+    backdrop-filter: blur(6px) !important;
+  }
+}
+@media (max-width: 430px) {
+  body.home-overhaul .harbor-hero,
+  body.home-overhaul .hero.harbor-hero,
+  body.home-overhaul:has(.harbor-hero) .hero.harbor-hero {
+    min-height: calc(100dvh - 128px) !important;
+    padding: 0 14px 16px !important;
+    background-size: contain !important;
+    background-position: center top !important;
+  }
+}
+/* preview mobile gul logo placement */
+@media (max-width: 760px) {
+  body.home-overhaul .harbor-hero,
+  body.home-overhaul .hero.harbor-hero,
+  body.home-overhaul:has(.harbor-hero) .hero.harbor-hero {
+    background-size: auto 94% !important;
+    background-position: center 0 !important;
+  }
+}
+@media (max-width: 430px) {
+  body.home-overhaul .harbor-hero,
+  body.home-overhaul .hero.harbor-hero,
+  body.home-overhaul:has(.harbor-hero) .hero.harbor-hero {
+    background-size: auto 92% !important;
+    background-position: center 2px !important;
+  }
+}
