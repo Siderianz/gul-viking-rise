@@ -4,46 +4,82 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Победы, рекорды, сезонные результаты и важные даты гильдии Viking Rise.">
-    <meta property="og:title" content="Достижения | Гильдия Viking Rise">
+    <meta property="og:title" content="Achievements | GUL">
     <meta property="og:description" content="Победы, рекорды, сезонные результаты и важные даты гильдии Viking Rise.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/hero-viking-guild.webp">
-    <title>Достижения | Гильдия Viking Rise</title>
+    <title>Achievements | GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=leadershipFinalPolish1">
   <link rel="preload" as="image" href="assets/section-achievements.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
   <body class="achievements-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
-      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <a class="brand" href="index.html"><span><strong>GUL</strong><small>Together further</small></span></a>
       <nav class="top-nav" aria-label="Основная навигация">
-        <a href="index.html">Главная</a>
-        <a href="migration.html">Миграция</a>
-        <a class="active" href="achievements.html">Достижения</a>
-        <a href="media.html">Медиа</a>
-        <a href="guides.html">Гайды</a>
-        <a href="kingdom.html">Структура королевства</a>
-        <a href="contacts.html">Контакты и ссылки</a>
+        <a href="index.html">Home</a>
+        <a href="migration.html">Migration</a>
+        <a class="active" href="achievements.html">Achievements</a>
+        <a href="media.html">Media</a>
+        <a href="guides.html">Guides</a>
+        <a href="kingdom.html">Leadership</a>
+        <a href="contacts.html">Socials</a>
       </nav>
     </header>
-    <main class="page">
-      <section class="unified-page-title page-title">
-        <p class="eyebrow" data-i18n="achievements.eyebrow">Зал славы</p>
-        <h1 data-i18n="achievements.title">Достижения</h1>
-        <p data-i18n="achievements.intro">Место для побед, рекордов, сезонных результатов и важных дат гильдии.</p>
+    <main class="page achievements-overhaul">
+      <section class="achievements-hero" aria-labelledby="achievements-title">
+        <div class="achievements-hero-copy">
+          <span class="achievements-kicker">Hall of Glory</span>
+          <h1 id="achievements-title">Victories Carved in Iron</h1>
+          <p>Every raid, rally, rank, and hard-won milestone earns its place here. The board is being forged for the next chapter of GUL.</p>
+        </div>
       </section>
-      <section class="glory-waiting">
+
+      <section class="achievements-ledger" aria-label="Achievement categories">
+        <article class="achievement-panel panel-war">
+          <span class="panel-mark">01</span>
+          <div>
+            <p>War record</p>
+            <h2>Kingdom battles</h2>
+            <span>Event wins, rally calls, defenses, and battlefield moments will be recorded here.</span>
+          </div>
+        </article>
+        <article class="achievement-panel panel-rank">
+          <span class="panel-mark">02</span>
+          <div>
+            <p>Rank climbs</p>
+            <h2>Guild progress</h2>
+            <span>Power milestones, guild growth, member movement, and season performance belong in this row.</span>
+          </div>
+        </article>
+        <article class="achievement-panel panel-honor">
+          <span class="panel-mark">03</span>
+          <div>
+            <p>Honour earned</p>
+            <h2>Member highlights</h2>
+            <span>Standout warriors, clutch plays, and stories worth remembering will be featured here.</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="achievements-coming-soon">
         <span class="glory-seal" aria-hidden="true">✦</span>
-        <p class="eyebrow" data-i18n="achievements.waitLabel">Летопись пополняется</p>
-        <h2 data-i18n="achievements.waitTitle">Следующая победа займёт место здесь.</h2>
-        <p data-i18n="achievements.waitText">Мы собираем наши награды. Скоро здесь появятся знаки отличия гильдии, места в рейтингах событий и достигнутые рубежи.</p>
-        <span class="glory-divider" aria-hidden="true"></span>
-        <p class="glory-return" data-i18n="achievements.waitReturn">Возвращайся. Слава не заставит себя ждать.</p>
-      <a class="button" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="actions.discord">Open Discord</a></section>
+        <div>
+          <p class="achievements-kicker">The saga is being written</p>
+          <h2>The next triumph gets the first mark.</h2>
+          <p>Leadership is gathering proof, dates, and rankings before the glory wall opens. When GUL earns it, this page will show it with weight.</p>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Летопись побед</span></footer>
-    <script src="languages.js"></script><script src="script.js"></script>
+    <footer class="site-footer"><span>GUL</span><span>Летопись побед</span></footer>
+    <script src="languages.js"></script><script src="script.js?v=leadershipFinalPolish1"></script>
   <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
 </html>
+
+
+
+
+
+
 
 
 

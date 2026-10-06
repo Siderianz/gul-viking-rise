@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Сайт гильдии Viking Rise: заявки, гайды, достижения, медиа, структура королевства и контакты.">
-    <meta property="og:title" content="Гильдия Viking Rise">
-    <meta property="og:description" content="Сайт гильдии Viking Rise: заявки, гайды, достижения, медиа, структура королевства и контакты.">
+    <meta name="description" content="Сайт гильдии Viking Rise: заявки, Guides, Achievements, Media, Leadership и контакты.">
+    <meta property="og:title" content="GUL">
+    <meta property="og:description" content="Сайт гильдии Viking Rise: заявки, Guides, Achievements, Media, Leadership и контакты.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/hero-viking-guild.webp">
-    <title>Гильдия Viking Rise</title>
+    <title>GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
-    <link rel="stylesheet" href="styles.css">
-  <link rel="preload" as="image" href="assets/hero-viking-guild.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
-  <body><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=homeShieldHall5">
+  <link rel="preload" as="image" href="assets/gul-cinematic-logo.png" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
+  <body class="home-overhaul"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <div class="language-gate" data-language-gate>
       <div class="cinematic-harbor" aria-hidden="true">
         <div class="living-sea"></div>
@@ -30,10 +30,7 @@
       <div class="cinematic-fog" aria-hidden="true"></div>
       <div class="gate-backdrop"></div>
       <section class="gate-panel" aria-label="Language selection">
-        <div class="gate-logo-wrap">
-          <img class="gate-logo" src="assets/guild-logo-cutout.webp" alt="GUL" onerror="this.classList.add('is-missing')" />
-          <div class="gate-logo-fallback">GUL</div>
-        </div>
+        <div class="gate-wordmark">GUL</div>
         <p class="cinematic-intro" data-i18n="intro.tagline">Every legend begins here.</p>
         <div class="language-choice-block">
           <p class="language-question" data-i18n="intro.languageQuestion">In which tongue shall your saga be told?</p>
@@ -50,21 +47,20 @@
     </div>
 
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Главная страница гильдии">
-        <img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL">
+      <a class="brand" href="index.html" aria-label="Home страница гильдии">
         <span>
           <strong data-i18n="brand.title">GUL • Viking Rise</strong>
           <small data-i18n="brand.subtitle">Одна гильдия. Одна сага.</small>
         </span>
       </a>
       <nav class="top-nav" aria-label="Основная навигация">
-        <a class="active" href="index.html" data-i18n="nav.home">Главная</a>
-        <a href="migration.html" data-i18n="nav.migration">Миграция</a>
-        <a href="achievements.html" data-i18n="nav.achievements">Достижения</a>
-        <a href="media.html" data-i18n="nav.media">Медиа</a>
-        <a href="guides.html" data-i18n="nav.guides">Гайды</a>
-        <a href="kingdom.html" data-i18n="nav.kingdom">Структура королевства</a>
-        <a href="contacts.html" data-i18n="nav.contacts">Контакты и ссылки</a>
+        <a class="active" href="index.html" data-i18n="nav.home">Home</a>
+        <a href="migration.html" data-i18n="nav.migration">Migration</a>
+        <a href="achievements.html" data-i18n="nav.achievements">Achievements</a>
+        <a href="media.html" data-i18n="nav.media">Media</a>
+        <a href="guides.html" data-i18n="nav.guides">Guides</a>
+        <a href="kingdom.html" data-i18n="nav.kingdom">Leadership</a>
+        <a href="contacts.html" data-i18n="nav.contacts">Socials</a>
       </nav>
     </header>
 
@@ -74,71 +70,119 @@
           <div class="battlefield-smoke"></div>
           <div class="harbor-embers"></div>
         </div>
-        <div class="hero-content">
-          <h1 data-i18n="home.heroTitle">Стоим вместе. Восходим к легенде.</h1>
-          <p data-i18n="home.heroText">
-            Здесь будет центр вашей гильдии: заявки для новых игроков, победы,
-            медиаархив, полезные гайды, структура королевства и быстрые ссылки.
-          </p>
+        <div class="hero-content"><div class="home-crest-mark cinematic-home-mark" aria-label="GUL cinematic logo"><img src="assets/gul-emblem-transparent.png" alt="GUL"></div>
         <div class="hero-actions"><a class="button primary" href="migration.html" data-i18n="actions.apply">Apply to GUL</a><a class="button" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="actions.discord">Open Discord</a></div></div>
-        <div class="hero-emblem"><img src="assets/guild-logo-cutout.webp" alt="GUL guild emblem"></div>
-      </section>
-
-      <section class="section">
-        <div class="section-heading course-heading">
-          <span class="course-compass" aria-hidden="true">✦</span>
-          <p class="eyebrow" data-i18n="home.sectionsEyebrow">За вратами</p>
-          <h2 data-i18n="home.sectionsTitle">Выбери свой курс</h2>
-          <p class="course-intro" data-i18n="home.sectionsIntro">Встань в строй. Вспомни битвы. Найди свой следующий шаг.</p>
-          <span class="course-scroll" aria-hidden="true">⌄</span>
+        
+      <div class="home-welcome-line"><strong>Welcome to the Shield Hall.</strong><span>Where warriors gather, orders are called, and GUL moves as one.</span></div><a class="home-scroll-cue" href="#home-sections" aria-label="Scroll to site sections"><span>Enter the hall</span><i aria-hidden="true"></i></a></section>
+      <section class="home-command-deck" id="home-sections" aria-label="GUL site sections">
+        <div class="home-deck-heading">
+          <span>Guild Hall</span>
+          <strong>Choose your next stop</strong>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card announcement-home-card"><p class="availability" data-i18n="status.soon">Coming soon</p>
-            <h3 data-i18n="cards.announcementsTitle">Следи за сигналом</h3>
-            <p data-i18n="cards.announcementsText">События, напоминания и вести из чертогов. Будь готов к следующему шагу GUL.</p>
-            <a href="announcements.html" data-i18n="cards.announcementsAction">Читать объявления</a>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="cards.migrationTitle">Держи курс на GUL</h3>
-            <p data-i18n="cards.migrationText">Новые берега. Надёжные союзники. Найди своё место в наших рядах — узнай требования и подай заявку на переход.</p>
-            <a href="migration.html" data-i18n="cards.migrationAction">Встать в строй</a>
-          </article>
-          <article class="feature-card"><p class="availability" data-i18n="status.soon">Coming soon</p>
-            <h3 data-i18n="cards.achievementsTitle">Слава, добытая в бою</h3>
-            <p data-i18n="cards.achievementsText">Трофеи, добытые в бою. Победы, вписанные в нашу историю. След, который мы оставляем.</p>
-            <a href="achievements.html" data-i18n="cards.achievementsAction">Наши победы</a>
-          </article>
-          <article class="feature-card"><p class="availability" data-i18n="status.soon">Coming soon</p>
-            <h3 data-i18n="cards.mediaTitle">Сквозь огонь и фьорды</h3>
-            <p data-i18n="cards.mediaText">Алые паруса. Поднятые щиты. Незабываемые битвы. Взгляни на GUL глазами наших воинов.</p>
-            <a href="media.html" data-i18n="cards.mediaAction">Открыть галерею</a>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="cards.guidesTitle">Отточи своё мастерство</h3>
-            <p data-i18n="cards.guidesText">Прежде чем опустится топор, битва уже спланирована. Набирай силу и учись бить точно.</p>
-            <a href="guides.html" data-i18n="cards.guidesAction">К военному столу</a>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="cards.kingdomTitle">Чертоги GUL</h3>
-            <p data-i18n="cards.kingdomText">За стеной щитов стоят те, кто ведёт вперёд. Познакомься с хранителями нашего королевства.</p>
-            <a href="kingdom.html" data-i18n="cards.kingdomAction">Наши лидеры</a>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="cards.contactsTitle">Отправь ворона</h3>
-            <p data-i18n="cards.contactsText">Даже за фьордами наши чертоги рядом. Обратись с вопросом, предложением или желанием вступить в наши ряды.</p>
-            <a href="contacts.html" data-i18n="cards.contactsAction">Связаться</a>
-          </article>
+        <div class="home-route-grid">
+          <a class="home-route" href="announcements.html">
+            <strong data-i18n="cards.announcementsTitle">Announcements</strong>
+            <small>Orders, events, and word from the hall.</small>
+          </a>
+          <a class="home-route" href="migration.html">
+            <strong data-i18n="cards.migrationTitle">Migration</strong>
+            <small>Apply to sail with GUL.</small>
+          </a>
+          <a class="home-route" href="achievements.html">
+            <strong data-i18n="cards.achievementsTitle">Achievements</strong>
+            <small>Victories, milestones, and glory earned.</small>
+          </a>
+          <a class="home-route" href="media.html">
+            <strong data-i18n="cards.mediaTitle">Media</strong>
+            <small>Scenes from battles and voyages.</small>
+          </a>
+          <a class="home-route" href="guides.html">
+            <strong data-i18n="cards.guidesTitle">Guides</strong>
+            <small>Build smarter before the axe falls.</small>
+          </a>
+          <a class="home-route" href="kingdom.html">
+            <strong data-i18n="cards.kingdomTitle">Leadership</strong>
+            <small>Meet the crew leading GUL forward.</small>
+          </a>
+          <a class="home-route" href="contacts.html">
+            <strong data-i18n="cards.contactsTitle">Socials</strong>
+            <small>Discord, leadership, and YouTube soon.</small>
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span data-i18n="brand.title">Гильдия Viking Rise</span>
+      <span data-i18n="brand.title">GUL</span>
       <span data-i18n="footer.note">Скелет сайта для дальнейшего наполнения</span>
     </footer>
-    <script src="languages.js"></script><script src="script.js"></script>
+    <script src="languages.js"></script><script src="script.js?v=homeShieldHall5"></script>
   <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

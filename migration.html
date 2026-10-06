@@ -1,76 +1,98 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Правила переезда, требования к игрокам и форма заявки на миграцию в гильдию Viking Rise.">
-    <meta property="og:title" content="Заявка на миграцию | Гильдия Viking Rise">
-    <meta property="og:description" content="Правила переезда, требования к игрокам и форма заявки на миграцию в гильдию Viking Rise.">
+    <meta name="description" content="Apply to migrate and sail with GUL in Viking Rise.">
+    <meta property="og:title" content="Migration | GUL">
+    <meta property="og:description" content="Apply to migrate and sail with GUL in Viking Rise.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/hero-viking-guild.webp">
-    <title>Заявка на миграцию | Гильдия Viking Rise</title>
+    <meta property="og:image" content="assets/section-migration.webp">
+    <title>Migration | GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
-    <link rel="stylesheet" href="styles.css">
-  <link rel="preload" as="image" href="assets/section-migration.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
-  <body class="migration-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
+    <link rel="preload" as="image" href="assets/section-migration.webp" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css?v=cardsImagesBackPagePlain1">
+    <link rel="stylesheet" href="desktop-performance.css">
+  </head>
+  <body class="migration-page migration-overhaul">
+    <div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
-      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
-      <nav class="top-nav" aria-label="Основная навигация">
-        <a href="index.html">Главная</a>
-        <a class="active" href="migration.html">Миграция</a>
-        <a href="achievements.html">Достижения</a>
-        <a href="media.html">Медиа</a>
-        <a href="guides.html">Гайды</a>
-        <a href="kingdom.html">Структура королевства</a>
-        <a href="contacts.html">Контакты и ссылки</a>
+      <a class="brand" href="index.html" aria-label="GUL home"><span><strong>GUL</strong><small>Together further</small></span></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="kingdom.html">Leadership</a>
+        <a class="active" href="migration.html">Migration</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="media.html">Media</a>
+        <a href="guides.html">Guides</a>
+        <a href="contacts.html">Socials</a>
       </nav>
+      <div class="language-switcher language-select" aria-label="Language"><select aria-label="Language"><option selected>English</option><option>Русский</option><option>Tiếng Việt</option><option>Türkçe</option><option>Français</option><option>Bahasa Indonesia</option></select></div>
     </header>
-    <main class="page">
-      <section class="unified-page-title page-title">
-        <p class="eyebrow" data-i18n="migration.eyebrow">Заявка</p>
-        <h1 data-i18n="migration.title">Заявка на миграцию</h1>
-        <p data-i18n="migration.intro">Раздел для правил переезда, требований к игрокам и формы анкеты.</p>
-      <a class="button primary migration-jump" href="#application" data-i18n="migration.jump">Go to application</a></section>
-      <section class="content-grid two-columns">
-        <article class="panel">
-          <h2 data-i18n="migration.requirementsTitle">Требования</h2>
+
+    <main class="page migration-page-shell">
+      <section class="migration-hero" aria-labelledby="migration-title">
+        <div class="migration-hero-copy">
+          <span class="migration-kicker" data-i18n="migration.eyebrow">Join the voyage</span>
+          <h1 id="migration-title" data-i18n="migration.title">Migration</h1>
+          <p data-i18n="migration.intro">Apply to sail with GUL.</p>
+          <a class="migration-hero-cta" href="#application" data-i18n="migration.jump">Start your application</a>
+        </div>
+      </section>
+
+      <section class="migration-voyage-grid" aria-label="Migration details">
+        <article class="migration-panel migration-requirements">
+          <span class="migration-kicker">Before you sail</span>
+          <h2 data-i18n="migration.requirementsTitle">Requirements</h2>
           <ul>
-            <li data-i18n="migration.reqPower">Минимальная сила игрока: указать позже.</li>
-            <li data-i18n="migration.reqActivity">Активность в событиях и войнах королевства.</li>
-            <li data-i18n="migration.reqContact">Связь через Discord или другой основной канал.</li>
-            <li data-i18n="migration.reqRecord">Приходи с чистой репутацией: без предательств, травли и намеренного вреда в прежнем королевстве.</li>
-          </ul><a class="button" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="migration.eligibility">Ask about eligibility</a>
+            <li data-i18n="migration.reqPower">Player power minimum: to be announced.</li>
+            <li data-i18n="migration.reqActivity">Active in events and kingdom wars.</li>
+            <li data-i18n="migration.reqContact">Reachable through Discord or the main guild channel.</li>
+            <li data-i18n="migration.reqRecord">Arrive with a clean reputation: no betrayal, harassment, or deliberate harm in your former kingdom.</li>
+          </ul>
+          <a class="migration-discord" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="migration.eligibility">Ask about eligibility</a>
         </article>
-        <article class="panel">
-          <h2 data-i18n="migration.formTitle">Анкета</h2>
-          <form id="application" class="form" data-migration-form action="#" method="post">
-            <label><span data-i18n="migration.nickname">Игровой ник</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="nickname" autocomplete="nickname" required aria-required="true" maxlength="100" placeholder="Например: Ragnar" data-placeholder-i18n="migration.nicknamePlaceholder"></label>
-            <label><span data-i18n="migration.playerId">ID игрока</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="player-id" inputmode="numeric" required aria-required="true" maxlength="100" placeholder="Ваш ID" data-placeholder-i18n="migration.playerIdPlaceholder"></label>
-            <label><span data-i18n="migration.power">Текущая сила</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="power" required aria-required="true" maxlength="100" placeholder="Например: 45M" data-placeholder-i18n="migration.powerPlaceholder"></label>
-            <label><span data-i18n="migration.comment">Комментарий</span><textarea name="comment" maxlength="2000" rows="4" placeholder="Опыт, часовой пояс, цели миграции" data-placeholder-i18n="migration.commentPlaceholder"></textarea></label>
-            <button class="button primary" type="submit" data-i18n="migration.submit">Отправить заявку</button>
-          <p class="form-help" data-i18n="migration.deliveryHelp">Google opens a confirmation page. Without confirmation, contact leadership on Discord.</p><a class="form-support" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="actions.discord">Open Discord</a><label hidden aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><p role="status" aria-live="polite"></p></form>
+
+        <article class="migration-steps" aria-label="Migration path">
+          <span class="migration-kicker">How it works</span>
+          <h2>From shore to shield wall</h2>
+          <div class="migration-step-list">
+            <div><span>01</span><strong>Send your details</strong><p>Give leadership the basics so they can review fast.</p></div>
+            <div><span>02</span><strong>Wait for the call</strong><p>R4 or R5 checks fit, timing, and kingdom needs.</p></div>
+            <div><span>03</span><strong>Sail with GUL</strong><p>If approved, you’ll get the next move clearly.</p></div>
+          </div>
         </article>
       </section>
+
+      <section class="migration-application-card" aria-labelledby="application-title">
+        <div class="application-intro">
+          <span class="migration-kicker">Application</span>
+          <h2 id="application-title" data-i18n="migration.formTitle">Send your request</h2>
+          <p>Keep it short, clear, and useful. The faster leadership understands your account, the faster they can answer.</p>
+        </div>
+        <form id="application" class="form migration-form" data-migration-form action="#" method="post">
+          <div class="migration-form-grid">
+            <label><span data-i18n="migration.nickname">Game nickname</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="nickname" autocomplete="nickname" required aria-required="true" maxlength="100" placeholder="Example: Ragnar" data-placeholder-i18n="migration.nicknamePlaceholder"></label>
+            <label><span data-i18n="migration.playerId">Player ID</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="player-id" inputmode="numeric" required aria-required="true" maxlength="100" placeholder="Your ID" data-placeholder-i18n="migration.playerIdPlaceholder"></label>
+            <label><span data-i18n="migration.power">Current power</span> <small class="required-label" data-i18n="form.required">Required</small><input type="text" name="power" required aria-required="true" maxlength="100" placeholder="Example: 45M" data-placeholder-i18n="migration.powerPlaceholder"></label>
+            <label class="migration-comment"><span data-i18n="migration.comment">Comment</span><textarea name="comment" maxlength="2000" rows="4" placeholder="Experience, time zone, migration goals" data-placeholder-i18n="migration.commentPlaceholder"></textarea></label>
+          </div>
+          <div class="migration-submit-row migration-submit-premium">
+            <div class="migration-action-stack">
+              <button class="button primary" type="submit" data-i18n="migration.submit">Submit application</button>
+            </div>
+            <p class="form-help migration-r5-note"><span class="note-title">Application check</span><span>After sending, a Google confirmation page should open. If nothing appears, contact <a href="kingdom.html" class="r5-leadership-link">R5 leadership</a>.</span></p>
+          </div>
+          <label hidden aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label><p role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </main>
-    <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Заявки рассматриваются R4</span></footer>
-    <script src="languages.js"></script><script src="script.js"></script><script src="migration-config.js"></script><script src="migration-form.js"></script>
-  <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
+    <footer class="site-footer"><span>GUL</span><span>Applications reviewed by leadership</span></footer>
+    <script src="languages.js"></script><script src="script.js?v=cardsImagesBackPagePlain1"></script><script src="migration-config.js"></script><script src="migration-form.js"></script>
+    <script src="page-transitions.js"></script><script src="background-preload.js"></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

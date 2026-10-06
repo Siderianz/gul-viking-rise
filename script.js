@@ -50,7 +50,7 @@ const translations = {
     "footer.note": "Сайт гильдии Viking Rise",
     "meta.homeTitle": "Гильдия Viking Rise",
     "meta.homeDescription": "Сайт гильдии Viking Rise: заявки, гайды, достижения, медиа, структура королевства и контакты.",
-    "meta.migrationTitle": "Заявка на миграцию | Гильдия Viking Rise",
+    "meta.migrationTitle": "Migration | Гильдия Viking Rise",
     "meta.migrationDescription": "Правила переезда, требования к игрокам и форма заявки на миграцию в гильдию Viking Rise.",
     "meta.achievementsTitle": "Достижения | Гильдия Viking Rise",
     "meta.achievementsDescription": "Победы, рекорды, сезонные результаты и важные даты гильдии Viking Rise.",
@@ -60,7 +60,7 @@ const translations = {
     "meta.guidesDescription": "Гайды Viking Rise по PvP, навыкам, маунтам, экипировке, событиям и развитию.",
     "meta.kingdomTitle": "Структура королевства | Гильдия Viking Rise",
     "meta.kingdomDescription": "Состав руководства гильдии Viking Rise: лидер R5 и офицеры R4.",
-    "meta.contactsTitle": "Контакты и ссылки | Гильдия Viking Rise",
+    "meta.contactsTitle": "Socials | Гильдия Viking Rise",
     "meta.contactsDescription": "Контакты, ссылки, Discord, лидеры и полезные ресурсы гильдии Viking Rise.",
     "home.eyebrow": "GUL • Viking Rise",
     "home.heroTitle": "Пусть вороны несут наше имя.",
@@ -176,23 +176,23 @@ const translations = {
   },
   en: {
     "announcements.eventsDesc": "Rallies, kingdom battles, and guild gatherings.",
-    "announcements.remindersDesc": "The times and preparations you need to remember.",
-    "announcements.updatesDesc": "Important word from GUL leadership.",
+    "announcements.remindersDesc": "Times and preparations to remember.",
+    "announcements.updatesDesc": "Important word from leadership.",
     "announcements.status": "Awaiting the next dispatch",
-    "cards.announcementsTitle": "Watch for the Signal",
+    "cards.announcementsTitle": "Announcements",
     "cards.announcementsText": "Events, reminders, and word from the hall. Stay ready for the next move with GUL.",
     "cards.announcementsAction": "View Announcements",
     "nav.announcements": "Announcements",
     "meta.announcementsTitle": "Announcements | GUL",
     "meta.announcementsDescription": "Events, reminders, and guild news from GUL.",
     "announcements.eyebrow": "Word from the hall",
-    "announcements.title": "Watch for the Signal",
-    "announcements.intro": "Events, reminders, and important news. Everything you need for GUL’s next move.",
+    "announcements.title": "Announcements",
+    "announcements.intro": "Events, reminders, and guild updates in one place.",
     "announcements.events": "Events",
     "announcements.reminders": "Reminders",
-    "announcements.updates": "Guild Updates",
-    "announcements.waitTitle": "The next call will sound here.",
-    "announcements.waitText": "New announcements will appear soon. Until then, visit our guild Discord to stay connected.",
+    "announcements.updates": "Updates",
+    "announcements.waitTitle": "No new orders yet.",
+    "announcements.waitText": "When something matters, it will land here first.",
     "announcements.discord": "Open Discord",
     "announcements.footer": "Events and news from GUL",
     "intro.tagline": "Every legend begins here.",
@@ -206,14 +206,14 @@ const translations = {
     "nav.guides": "Guides",
     "nav.kingdom": "Leadership",
     "nav.contacts": "Contact",
-    "layout.homeAria": "Guild home page",
+    "layout.homeAria": "Home",
     "layout.navAria": "Main navigation",
     "layout.language": "Language",
     "layout.ru": "RU",
     "layout.en": "EN",
     "footer.note": "Viking Rise guild website",
     "meta.homeTitle": "Viking Rise Guild",
-    "meta.homeDescription": "Viking Rise guild website with applications, guides, achievements, media, kingdom structure, and contacts.",
+    "meta.homeDescription": "Viking Rise guild website with applications, guides, achievements, media, Leadership, and contacts.",
     "meta.migrationTitle": "Migration request | Viking Rise Guild",
     "meta.migrationDescription": "Migration rules, player requirements, and application form for the Viking Rise guild.",
     "meta.achievementsTitle": "Achievements | Viking Rise Guild",
@@ -222,7 +222,7 @@ const translations = {
     "meta.mediaDescription": "Screenshots, videos, posters, and battle archive for the Viking Rise guild.",
     "meta.guidesTitle": "Guides | Viking Rise Guild",
     "meta.guidesDescription": "Viking Rise guides for PvP, skills, mounts, gear, events, and progression.",
-    "meta.kingdomTitle": "Kingdom structure | Viking Rise Guild",
+    "meta.kingdomTitle": "Leadership | Viking Rise Guild",
     "meta.kingdomDescription": "Viking Rise guild leadership roster: R5 leader and R4 officers.",
     "meta.contactsTitle": "Contacts and links | Viking Rise Guild",
     "meta.contactsDescription": "Contacts, links, Discord, leaders, and useful resources for the Viking Rise guild.",
@@ -365,8 +365,26 @@ Object.entries(socialCopy).forEach(([lang,copy]) => {
  Object.assign(translations[lang], {'nav.contacts':copy[0],'contacts.eyebrow':copy[1],'contacts.title':copy[2],'contacts.intro':copy[3],'contacts.youtubeTitle':'YouTube','contacts.youtubeText':copy[4],'contacts.youtubeStatus':copy[5],'cards.contactsTitle':copy[2],'cards.contactsText':copy[3],'cards.contactsAction':copy[0],'meta.contactsTitle':copy[0]+' | GUL','meta.contactsDescription':copy[3]});
 });
 
-const reviewCopy = {"en": ["Apply to GUL", "Open Discord", "Coming soon", "Ask about eligibility", "Go to application", "Required", "Applications open a Google confirmation page. If it does not confirm receipt, contact leadership on Discord.", "Viking Rise guild website"], "ru": ["Подать заявку в GUL", "Открыть Discord", "Скоро", "Уточнить требования", "Перейти к анкете", "Обязательно", "После отправки откроется подтверждение Google. Если получение не подтверждено, свяжитесь с лидерами в Discord.", "Сайт гильдии Viking Rise"], "vi": ["Đăng ký GUL", "Mở Discord", "Sắp ra mắt", "Hỏi về điều kiện", "Đến đơn đăng ký", "Bắt buộc", "Google sẽ mở trang xác nhận. Nếu chưa có xác nhận, hãy liên hệ lãnh đạo trên Discord.", "Trang web bang hội Viking Rise"], "tr": ["GUL’a başvur", "Discord’u aç", "Yakında", "Katılım koşullarını sor", "Başvuruya git", "Zorunlu", "Google onay sayfası açılır. Alındığı onaylanmazsa Discord üzerinden yönetime ulaşın.", "Viking Rise lonca sitesi"], "fr": ["Postuler à GUL", "Ouvrir Discord", "Bientôt", "Demander les conditions", "Accéder au formulaire", "Obligatoire", "Une page de confirmation Google s’ouvrira. Sans confirmation de réception, contactez les dirigeants sur Discord.", "Site de guilde Viking Rise"], "id": ["Daftar ke GUL", "Buka Discord", "Segera hadir", "Tanyakan persyaratan", "Ke formulir", "Wajib", "Halaman konfirmasi Google akan terbuka. Jika penerimaan belum dikonfirmasi, hubungi pemimpin melalui Discord.", "Situs guild Viking Rise"]};
+const reviewCopy = {"en": ["Apply to GUL", "Open Discord", "Coming soon", "Ask about eligibility", "Go to application", "Required", "A Google confirmation page should open after sending. If it does not work, please contact R5.", "Viking Rise guild website"], "ru": ["Подать заявку в GUL", "Открыть Discord", "Скоро", "Уточнить требования", "Перейти к анкете", "Обязательно", "После отправки должна открыться страница подтверждения Google. Если она не работает, свяжитесь с R5.", "Сайт гильдии Viking Rise"], "vi": ["Đăng ký GUL", "Mở Discord", "Sắp ra mắt", "Hỏi về điều kiện", "Đến đơn đăng ký", "Bắt buộc", "Trang xác nhận Google sẽ mở sau khi gửi. Nếu không hoạt động, vui lòng liên hệ R5.", "Trang web bang hội Viking Rise"], "tr": ["GUL’a başvur", "Discord’u aç", "Yakında", "Katılım koşullarını sor", "Başvuruya git", "Zorunlu", "Gönderdikten sonra Google onay sayfası açılmalıdır. Çalışmazsa lütfen R5 ile iletişime geçin.", "Viking Rise lonca sitesi"], "fr": ["Postuler à GUL", "Ouvrir Discord", "Bientôt", "Demander les conditions", "Accéder au formulaire", "Obligatoire", "Une page de confirmation Google devrait s’ouvrir après l’envoi. Si cela ne fonctionne pas, contactez R5.", "Site de guilde Viking Rise"], "id": ["Daftar ke GUL", "Buka Discord", "Segera hadir", "Tanyakan persyaratan", "Ke formulir", "Wajib", "Halaman konfirmasi Google akan terbuka setelah dikirim. Jika tidak berfungsi, silakan hubungi R5.", "Situs guild Viking Rise"]};
 Object.entries(reviewCopy).forEach(([lang,values]) => Object.assign(translations[lang], Object.fromEntries(["actions.apply", "actions.discord", "status.soon", "migration.eligibility", "migration.jump", "form.required", "migration.deliveryHelp", "home.footer"].map((key,index)=>[key,values[index]]))));
+
+Object.keys(translations).forEach((lang) => {
+  Object.assign(translations[lang], {
+    "brand.title": "GUL",
+    "brand.subtitle": "Together further",
+    "home.heroTitle": "GUL",
+    "home.heroText": "Together further",
+    "home.sectionsTitle": "",
+    "home.sectionsIntro": "",
+    "cards.announcementsTitle": "Announcements",
+    "cards.migrationTitle": "Migration",
+    "cards.achievementsTitle": "Achievements",
+    "cards.mediaTitle": "Media",
+    "cards.guidesTitle": "Guides",
+    "cards.kingdomTitle": "Leadership",
+    "cards.contactsTitle": "Socials"
+  });
+});
 
 function currentPage() {
   const file = location.pathname.split("/").pop() || "index.html";
@@ -385,7 +403,6 @@ function renderSharedLayout() {
   if (header) {
     header.innerHTML = `
       <a class="brand" href="index.html" data-i18n-aria-label="layout.homeAria">
-        <img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL">
         <span>
           <strong data-i18n="brand.title">Гильдия Viking Rise</strong>
           <small data-i18n="brand.subtitle">Королевство, рейды, союзники</small>
@@ -426,7 +443,7 @@ function ensureHeadLinks() {
     const icon = document.createElement("link");
     icon.rel = "icon";
     icon.type = "image/png";
-    icon.href = "assets/guild-logo-source.webp";
+    icon.href = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071217'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='24' font-family='serif' font-weight='700' fill='%23f1d88d'%3EGUL%3C/text%3E%3C/svg%3E";
     document.head.appendChild(icon);
   }
 }
@@ -442,6 +459,31 @@ function applyMeta(lang) {
   ensureMeta("property", "og:description", description);
   ensureMeta("property", "og:type", "website");
   ensureMeta("property", "og:image", "assets/hero-viking-guild.webp");
+}
+
+
+
+const homeWelcomeCopy = {
+  en: ["Welcome to the Shield Hall.", "Where warriors gather, orders are called, and GUL moves as one."],
+  ru: ["Добро пожаловать в Зал Щитов.", "Там, где собираются воины, звучат приказы, и GUL движется как одно целое."],
+  vi: ["Chào mừng đến Sảnh Khiên.", "Nơi chiến binh tụ họp, mệnh lệnh vang lên, và GUL tiến bước như một."],
+  tr: ["Kalkan Salonuna hoş geldin.", "Savaşçıların toplandığı, emirlerin verildiği ve GUL’un tek yürek ilerlediği yer."],
+  fr: ["Bienvenue dans la Halle des Boucliers.", "Là où les guerriers se rassemblent, les ordres résonnent, et GUL avance comme un seul clan."],
+  id: ["Selamat datang di Aula Perisai.", "Tempat para pejuang berkumpul, perintah dikumandangkan, dan GUL bergerak sebagai satu."]
+};
+Object.entries(homeWelcomeCopy).forEach(([lang, values]) => {
+  if (!translations[lang]) translations[lang] = {};
+  translations[lang]["home.welcomeTitle"] = values[0];
+  translations[lang]["home.welcomeText"] = values[1];
+});
+
+function applyHomeWelcomeCopy() {
+  const line = document.querySelector('.home-welcome-line');
+  if (!line) return;
+  const strong = line.querySelector('strong');
+  const span = line.querySelector('span');
+  if (strong) strong.textContent = t(currentLanguage, 'home.welcomeTitle');
+  if (span) span.textContent = t(currentLanguage, 'home.welcomeText');
 }
 
 function applyLanguage(lang) {
@@ -505,7 +547,9 @@ function initLanguageGate() {
   const savedLanguage = resolveInitialLanguage();
   applyLanguage(savedLanguage);
   if (!gate) return;
-  if (sessionStorage.getItem('guildWelcomeSeen') === '1') { gate.hidden=true; gate.inert=true; return; }
+  const forceOpeningPreview = new URLSearchParams(location.search).has('intro');
+  if (!forceOpeningPreview && sessionStorage.getItem('guildWelcomeSeen') === '1') { gate.hidden=true; gate.inert=true; document.body.classList.add('home-revealed'); return; }
+  if (forceOpeningPreview) sessionStorage.removeItem('guildWelcomeSeen');
   const choices=gate.querySelector('[data-lang-choice]')?.parentElement;
   if (choices) choices.innerHTML=Object.entries(languageNames).map(([code,name]) => `<button class="rune-button" type="button" data-lang-choice="${code}" aria-label="${name}">${name}</button>`).join('');
   gate.setAttribute('role','dialog'); gate.setAttribute('aria-modal','true'); gate.setAttribute('aria-label','Choose your language');
@@ -514,11 +558,17 @@ function initLanguageGate() {
   background.forEach(node=>node.inert=true);
   document.body.classList.add('has-language-gate');
   const close=(lang)=>{
+    if (forceOpeningPreview) { applyLanguage(lang); sessionStorage.removeItem('guildWelcomeSeen'); return; }
     sessionStorage.setItem('guildWelcomeSeen','1'); applyLanguage(lang);
-    gate.hidden=true; gate.inert=true;
-    background.forEach((node,i)=>node.inert=previous[i]);
-    document.body.classList.remove('has-language-gate');
-    document.querySelector('[data-language-select]')?.focus({preventScroll:true});
+    gate.classList.add('is-leaving');
+    document.body.classList.add('home-is-revealing');
+    window.setTimeout(()=>{
+      gate.hidden=true; gate.inert=true;
+      background.forEach((node,i)=>node.inert=previous[i]);
+      document.body.classList.remove('has-language-gate');
+      document.body.classList.add('home-revealed');
+      document.querySelector('[data-language-select]')?.focus({preventScroll:true});
+    }, 920);
   };
   const buttons=Array.from(gate.querySelectorAll('[data-lang-choice]'));
   buttons.forEach(button=>button.addEventListener('click',()=>close(button.dataset.langChoice)));
@@ -658,6 +708,68 @@ function initScrollSections() {
 
 
 
+
+
+
+
+
+// Longship Voyage exact wording pass. Keep language choices, but make the visual copy match concept 4.
+Object.keys(translations).forEach((lang) => {
+  Object.assign(translations[lang], {
+    "brand.title": "GUL",
+    "brand.subtitle": "Together further",
+    "home.heroTitle": "GUL",
+    "home.heroText": "Together further",
+    "home.sectionsTitle": "",
+    "home.sectionsIntro": "",
+    "announcements.eyebrow": "Dispatch",
+    "announcements.title": "Announcements",
+    "announcements.intro": "Events, reminders, and guild updates in one place.",
+    "announcements.events": "Events",
+    "announcements.eventsDesc": "Rallies, kingdom battles, and guild gatherings.",
+    "announcements.reminders": "Reminders",
+    "announcements.remindersDesc": "Times and preparations to remember.",
+    "announcements.updates": "Updates",
+    "announcements.updatesDesc": "Important word from leadership.",
+    "announcements.status": "Next dispatch",
+    "announcements.waitTitle": "No new orders yet.",
+    "announcements.waitText": "When something matters, it will land here first.",
+    "migration.eyebrow": "Passage",
+    "migration.title": "Migration",
+    "migration.intro": "Apply to sail with GUL.",
+    "migration.requirementsTitle": "Before you apply",
+    "migration.formTitle": "Application",
+    "achievements.eyebrow": "Records",
+    "achievements.title": "Achievements",
+    "achievements.intro": "Wins, milestones, and moments worth remembering.",
+    "media.eyebrow": "Gallery",
+    "media.title": "Media",
+    "media.intro": "Scenes from the guild, battles, and voyages.",
+    "guides.eyebrow": "War table",
+    "guides.title": "Guides",
+    "guides.intro": "Quick references for better play.",
+    "kingdom.eyebrow": "Crew",
+    "kingdom.title": "Leadership",
+    "kingdom.intro": "R5 leader and R4 officers.",
+    "kingdom.leaderTitle": "The Punisher",
+    "kingdom.leaderText": "Leading the crew, setting the course, and keeping GUL moving together.",
+    "kingdom.rosterTitle": "R4 Officers",
+    "contacts.eyebrow": "Socials",
+    "contacts.title": "Socials",
+    "contacts.intro": "Join the Discord, message leadership, and watch for YouTube soon.",
+    "cards.announcementsTitle": "Announcements",
+    "cards.migrationTitle": "Migration",
+    "cards.achievementsTitle": "Achievements",
+    "cards.mediaTitle": "Media",
+    "cards.guidesTitle": "Guides",
+    "cards.kingdomTitle": "Leadership",
+    "cards.contactsTitle": "Socials"
+  });
+});
+// LONGSHIP_EXACT_REAPPLY: refresh visible text after the concept 4 copy override.
+if (typeof applyLanguage === "function" && typeof getLanguage === "function") {
+  applyLanguage(getLanguage());
+}
 
 
 

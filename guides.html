@@ -3,56 +3,62 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Гайды Viking Rise по PvP, навыкам, маунтам, экипировке, событиям и развитию.">
-    <meta property="og:title" content="Гайды | Гильдия Viking Rise">
-    <meta property="og:description" content="Гайды Viking Rise по PvP, навыкам, маунтам, экипировке, событиям и развитию.">
+    <meta name="description" content="Guides Viking Rise по PvP, навыкам, маунтам, экипировке, событиям и развитию.">
+    <meta property="og:title" content="Guides | GUL">
+    <meta property="og:description" content="Guides Viking Rise по PvP, навыкам, маунтам, экипировке, событиям и развитию.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/hero-viking-guild.webp">
-    <title>Гайды | Гильдия Viking Rise</title>
+    <title>Guides | GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=finalCleanup1">
   <link rel="preload" as="image" href="assets/section-guides.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
   <body><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
-      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <a class="brand" href="index.html"><span><strong>GUL</strong><small>Together further</small></span></a>
       <nav class="top-nav" aria-label="Основная навигация">
-        <a href="index.html">Главная</a>
-        <a href="migration.html">Миграция</a>
-        <a href="achievements.html">Достижения</a>
-        <a href="media.html">Медиа</a>
-        <a class="active" href="guides.html">Гайды</a>
-        <a href="kingdom.html">Структура королевства</a>
-        <a href="contacts.html">Контакты и ссылки</a>
+        <a href="index.html">Home</a>
+        <a href="migration.html">Migration</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="media.html">Media</a>
+        <a class="active" href="guides.html">Guides</a>
+        <a href="kingdom.html">Leadership</a>
+        <a href="contacts.html">Socials</a>
       </nav>
     </header>
 
-    <main class="page guides-page">
-      <section class="unified-page-title page-title guide-title">
-        <p class="eyebrow" data-i18n="guides.eyebrow">GUL Ultimate Guide</p>
-        <h1 data-i18n="guides.title">Гайды Viking Rise</h1>
-        <p data-i18n="guides.intro">
-          Полная текстовая версия Excel-гайда для K709. Вкладки ниже повторяют
-          листы оригинального документа: PvP, сезонные сборки, маунты,
-          экипировка, события, опыт, фрагменты и исследования.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="https://docs.google.com/spreadsheets/d/1q49zHAj6hK8vT-AieP3fpKfMtoQGrmMfnsQCtGOAT1E/edit?usp=sharing" target="_blank" rel="noreferrer" data-i18n="guides.download">Открыть Google-таблицу</a>
-          <a class="button" href="https://docs.google.com/spreadsheets/d/1F1evqgHF9Qa7WUd12Sj3znI-mJsNrKk0ZDeVDuFUCvE/edit?usp=drivesdk" target="_blank" rel="noreferrer" data-i18n="guides.calculator">PvP калькулятор</a>
+    <main class="page guides-page guides-overhaul">
+      <section class="guides-hero" aria-labelledby="guides-title">
+        <div>
+          <span class="page-kicker">War Room</span>
+          <h1 id="guides-title">Guides for Sharper Raids</h1>
+          <p>Builds, events, mounts, gear, PvP notes, and calculators organized like a command table instead of a messy document pile.</p>
+          <div class="guide-action-row">
+            <a class="button primary" href="https://docs.google.com/spreadsheets/d/1q49zHAj6hK8vT-AieP3fpKfMtoQGrmMfnsQCtGOAT1E/edit?usp=sharing" target="_blank" rel="noreferrer">Open full guide</a>
+            <a class="button" href="https://docs.google.com/spreadsheets/d/1F1evqgHF9Qa7WUd12Sj3znI-mJsNrKk0ZDeVDuFUCvE/edit?usp=drivesdk" target="_blank" rel="noreferrer">PvP calculator</a>
+          </div>
         </div>
       </section>
 
-      <section class="guide-directory" id="guide-directory" aria-label="Guide topics"></section>
-      <section class="guide-credit">
-        <p data-i18n="guides.credit">Источник: GUL Ultimate Guide. Credits: Thorbjørnsson.</p>
+      <section class="guide-feature-strip" aria-label="Guide highlights">
+        <article><span>01</span><h2>PvP Builds</h2><p>Hero pairings, rally choices, skill priorities, and fast combat notes.</p></article>
+        <article><span>02</span><h2>Growth Path</h2><p>Research, equipment, mounts, EXP, and seasonal progress routes.</p></article>
+        <article><span>03</span><h2>Event Prep</h2><p>What to save, when to spend, and how to enter events ready.</p></article>
       </section>
+
+      <section class="guide-directory" id="guide-directory" aria-label="Guide topics"></section>
+      <section class="guide-credit"><p>Source: GUL Ultimate Guide. Credits: Thorbjørnsson.</p></section>
     </main>
 
-    <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Гайды для команды</span></footer>
+    <footer class="site-footer"><span>GUL</span><span>Guides для команды</span></footer>
     <script src="guide-data.js"></script>
     <script src="guide-links.js"></script>
-    <script src="languages.js"></script><script src="script.js"></script>
+    <script src="languages.js"></script><script src="script.js?v=finalCleanup1"></script>
   <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
 </html>
+
+
+
+
 
 
 

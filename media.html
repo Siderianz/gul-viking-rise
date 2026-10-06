@@ -4,46 +4,73 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Скриншоты, видео, афиши и архив боевых событий гильдии Viking Rise.">
-    <meta property="og:title" content="Медиа | Гильдия Viking Rise">
+    <meta property="og:title" content="Media | GUL">
     <meta property="og:description" content="Скриншоты, видео, афиши и архив боевых событий гильдии Viking Rise.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/hero-viking-guild.webp">
-    <title>Медиа | Гильдия Viking Rise</title>
+    <title>Media | GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=finalCleanup1">
   <link rel="preload" as="image" href="assets/section-media.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
-  <body class="achievements-page media-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
+  <body class="media-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
-      <a class="brand" href="index.html"><img class="brand-emblem" src="assets/guild-logo-cutout.webp" alt="GUL"><span><strong>Гильдия Viking Rise</strong><small>Королевство, рейды, союзники</small></span></a>
+      <a class="brand" href="index.html"><span><strong>GUL</strong><small>Together further</small></span></a>
       <nav class="top-nav" aria-label="Основная навигация">
-        <a href="index.html">Главная</a>
-        <a href="migration.html">Миграция</a>
-        <a href="achievements.html">Достижения</a>
-        <a class="active" href="media.html">Медиа</a>
-        <a href="guides.html">Гайды</a>
-        <a href="kingdom.html">Структура королевства</a>
-        <a href="contacts.html">Контакты и ссылки</a>
+        <a href="index.html">Home</a>
+        <a href="migration.html">Migration</a>
+        <a href="achievements.html">Achievements</a>
+        <a class="active" href="media.html">Media</a>
+        <a href="guides.html">Guides</a>
+        <a href="kingdom.html">Leadership</a>
+        <a href="contacts.html">Socials</a>
       </nav>
     </header>
-    <main class="page">
-      <section class="unified-page-title page-title">
-        <p class="eyebrow" data-i18n="media.eyebrow">Медиа</p>
-        <h1 data-i18n="media.title">Медиа</h1>
-        <p data-i18n="media.intro">Галерея для скриншотов, клипов, афиш и отчетов после событий.</p>
+    <main class="page media-overhaul">
+      <section class="media-hero" aria-labelledby="media-title">
+        <div class="media-hero-copy">
+          <span class="page-kicker">GUL Chronicle</span>
+          <h1 id="media-title">Moments Worth the Firelight</h1>
+          <p>The gallery is built for battle shots, victory clips, rally posters, and the kind of guild memories that deserve more than a chat scroll.</p>
+        </div>
+        <div class="media-lens-card" aria-hidden="true">
+          <span class="lens-ring"></span>
+          <span class="lens-glint"></span>
+          <strong>Archive</strong>
+          <small>Shots · Clips · Posters</small>
+        </div>
       </section>
-      <section class="glory-waiting media-waiting">
-        <span class="glory-seal" aria-hidden="true">▷</span>
-        <p class="eyebrow" data-i18n="media.waitLabel">В кадре — GUL</p>
-        <h2 data-i18n="media.waitTitle">Некоторые моменты стоит увидеть.</h2>
-        <p data-i18n="media.waitText">Мы собираем кадры наших походов, битв и жизни гильдии. Скоро здесь появятся фотографии и видео GUL.</p>
-        <span class="glory-divider" aria-hidden="true"></span>
-        <p class="glory-return" data-i18n="media.waitReturn">Первые кадры уже на горизонте.</p>
-      <a class="button" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="actions.discord">Open Discord</a></section>
+
+      <section class="media-board" aria-label="Media categories">
+        <article class="media-tile large" style="--tile-art:url('assets/section-media.webp')">
+          <span>Gallery</span>
+          <h2>Raid snapshots</h2>
+          <p>Hero shots, marches, fireside moments, and guild screenshots will sit here.</p>
+        </article>
+        <article class="media-tile" style="--tile-art:url('assets/battlefield-hero.webp')">
+          <span>Clips</span>
+          <h2>Battle reels</h2>
+          <p>Short wins, big hits, and battlefield highlights.</p>
+        </article>
+        <article class="media-tile" style="--tile-art:url('assets/announcements-board.webp')">
+          <span>Posters</span>
+          <h2>Event banners</h2>
+          <p>Recruitment cards, event notices, and visual announcements.</p>
+        </article>
+      </section>
+
+      <section class="media-note">
+        <span aria-hidden="true">◆</span>
+        <p><strong>Archive opening soon.</strong> The first collection will be added once leadership gathers the cleanest shots and clips.</p>
+      </section>
     </main>
-    <footer class="site-footer"><span>Гильдия Viking Rise</span><span>Медиаархив пополняется</span></footer>
-    <script src="languages.js"></script><script src="script.js"></script>
+    <footer class="site-footer"><span>GUL</span><span>Mediaархив пополняется</span></footer>
+    <script src="languages.js"></script><script src="script.js?v=finalCleanup1"></script>
   <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
 </html>
+
+
+
+
 
 
 

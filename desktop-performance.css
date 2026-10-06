@@ -1,11 +1,1 @@
-@media(min-width:1024px){
-body{background-attachment:scroll!important}
-body:has(.unified-page-title)::before{inset:-2%;animation:desktop-scene-drift 32s ease-in-out infinite alternate;will-change:transform}
-body:has(.unified-page-title)::after{inset:0;animation:none;transform:none;opacity:.55}
-.battlefield-smoke,.cinematic-fog,.harbor-mist,.roof-smoke i{filter:none}
-.battlefield-smoke{animation:desktop-scene-drift 32s ease-in-out infinite alternate}
-.hero-emblem img{filter:none}
-.harbor-embers i:nth-child(n+11){display:none}
-}
-@keyframes desktop-scene-drift{from{transform:translate3d(-.5%,0,0)}to{transform:translate3d(.5%,0,0)}}
-@media(min-width:1024px) and (prefers-reduced-motion:reduce){body:has(.unified-page-title)::before,.battlefield-smoke{animation:none}}
+/* Redesign performance overrides are now built into styles.css. */

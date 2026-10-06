@@ -1,41 +1,65 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Announcements | GUL</title><link rel="stylesheet" href="styles.css"><link rel="preload" as="image" href="assets/section-kingdom.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
-<body class="contacts-page announcements-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
-<header class="site-header"></header>
-<main class="page">
-<section class="unified-page-title page-title">
-<p class="eyebrow" data-i18n="announcements.eyebrow">Word from the hall</p>
-<h1 data-i18n="announcements.title">Watch for the Signal</h1>
-<p data-i18n="announcements.intro">Events, reminders, and important news. Everything you need for GUL’s next move.</p>
-</section>
-<section class="announcement-board">
-<div class="notice-categories">
-<article><span class="notice-icon" aria-hidden="true">⚔</span><h2 data-i18n="announcements.events">Events</h2><p data-i18n="announcements.eventsDesc">Rallies, kingdom battles, and guild gatherings.</p></article>
-<article><span class="notice-icon" aria-hidden="true">◷</span><h2 data-i18n="announcements.reminders">Reminders</h2><p data-i18n="announcements.remindersDesc">The times and preparations you need to remember.</p></article>
-<article><span class="notice-icon" aria-hidden="true">ᚱ</span><h2 data-i18n="announcements.updates">Guild Updates</h2><p data-i18n="announcements.updatesDesc">Important word from GUL leadership.</p></article>
-</div>
-<div class="notice-empty">
-<span class="notice-seal" aria-hidden="true">✦</span>
-<p class="eyebrow" data-i18n="announcements.status">Awaiting the next dispatch</p>
-<h2 data-i18n="announcements.waitTitle">The next call will sound here.</h2>
-<p data-i18n="announcements.waitText">New announcements will appear soon. Until then, visit our guild Discord to stay connected.</p>
-<a class="button primary" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="announcements.discord">Open Discord</a>
-</div></section>
-</main><footer class="site-footer"></footer><script src="languages.js"></script><script src="script.js"></script>
-<script src="page-transitions.js"></script><script src="background-preload.js"></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Announcements | GUL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=announcementBarsNoBg2">
+  <link rel="preload" as="image" href="assets/announcements-board.webp" fetchpriority="high">
+  <link rel="stylesheet" href="desktop-performance.css">
+</head>
+<body class="contacts-page announcements-page announcements-overhaul">
+  <div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
+  <header class="site-header"></header>
+  <main class="page announcement-page-shell">
+    <section class="announcement-hero" aria-labelledby="announcement-title">
+      <div class="announcement-hero-copy">
+        <span class="announcement-kicker" data-i18n="announcements.eyebrow">Word from the hall</span>
+        <h1 id="announcement-title" data-i18n="announcements.title">Announcements</h1>
+        <p data-i18n="announcements.intro">Events, reminders, and guild updates in one place.</p>
+      </div>
+    </section>
 
+    <section class="war-dispatch" aria-label="Current guild notice">
+      <div class="dispatch-copy">
+        <span class="dispatch-label">Current Dispatch</span>
+        <h2 data-i18n="announcements.waitTitle">No new orders yet.</h2>
+        <p data-i18n="announcements.waitText">When something matters, it will land here first.</p>
+      </div>
+      <a class="dispatch-link" href="https://discord.gg/zuFsm8NpT2" target="_blank" rel="noopener noreferrer" data-i18n="announcements.discord">Open Discord</a>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    <section class="notice-categories notice-rail" aria-label="Announcement categories">
+      <article class="notice-panel notice-panel-events">
+        <span class="notice-panel-mark" aria-hidden="true">I</span>
+        <div>
+          <p class="notice-panel-label">Battle calls</p>
+          <h2 data-i18n="announcements.events">Events</h2>
+          <p data-i18n="announcements.eventsDesc">Rallies, kingdom battles, and guild gatherings.</p>
+        </div>
+      </article>
+      <article class="notice-panel notice-panel-reminders">
+        <span class="notice-panel-mark" aria-hidden="true">II</span>
+        <div>
+          <p class="notice-panel-label">Before we sail</p>
+          <h2 data-i18n="announcements.reminders">Reminders</h2>
+          <p data-i18n="announcements.remindersDesc">Times and preparations to remember.</p>
+        </div>
+      </article>
+      <article class="notice-panel notice-panel-updates">
+        <span class="notice-panel-mark" aria-hidden="true">III</span>
+        <div>
+          <p class="notice-panel-label">From leadership</p>
+          <h2 data-i18n="announcements.updates">Updates</h2>
+          <p data-i18n="announcements.updatesDesc">Important word from leadership.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script src="languages.js"></script><script src="script.js?v=announcementBarsNoBg2"></script>
+  <script src="page-transitions.js"></script><script src="background-preload.js"></script>
+</body>
+</html>
 
