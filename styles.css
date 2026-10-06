@@ -12507,3 +12507,146 @@ html, body {
     padding-top: 138px !important;
   }
 }
+/* preview only welcome gul background zoom out */
+@media (max-width: 760px) {
+  body.has-language-gate .language-gate,
+  body.has-language-gate .language-gate .gate-backdrop,
+  body.has-language-gate .language-gate::before,
+  body.has-language-gate .language-gate::after,
+  .language-gate,
+  .language-gate .gate-backdrop,
+  .language-gate::before,
+  .language-gate::after {
+    background-size: contain !important;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+  }
+  .language-gate {
+    background-color: #030707 !important;
+  }
+  .language-gate .gate-panel {
+    margin-top: min(58vh, 470px) !important;
+  }
+}
+@media (max-width: 430px) {
+  body.has-language-gate .language-gate,
+  body.has-language-gate .language-gate .gate-backdrop,
+  body.has-language-gate .language-gate::before,
+  body.has-language-gate .language-gate::after,
+  .language-gate,
+  .language-gate .gate-backdrop,
+  .language-gate::before,
+  .language-gate::after {
+    background-size: 100% auto !important;
+    background-position: top center !important;
+  }
+  .language-gate .gate-panel {
+    margin-top: min(58vh, 455px) !important;
+  }
+}
+/* preview homepage route card overlap fix */
+@media (max-width: 760px) {
+  /* Restore homepage hero image behavior closer to desktop, no forced top-banner zoom rule */
+  body.home-overhaul .harbor-hero {
+    padding: 28px 18px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Make the bottom homepage cards readable on phones */
+  body.home-overhaul .home-route-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  body.home-overhaul .home-route {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+    gap: 9px !important;
+    min-height: 168px !important;
+    padding: 24px 22px !important;
+    text-align: left !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  body.home-overhaul .home-route::after {
+    inset: 0 !important;
+    background: linear-gradient(90deg, rgba(1,8,9,.88), rgba(1,8,9,.64) 54%, rgba(1,8,9,.34)) !important;
+  }
+  body.home-overhaul .home-route > * {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  body.home-overhaul .home-route strong {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: clamp(31px, 9vw, 42px) !important;
+    line-height: .95 !important;
+    letter-spacing: .055em !important;
+    white-space: normal !important;
+    transform: none !important;
+  }
+  body.home-overhaul .home-route small {
+    display: block !important;
+    width: 100% !important;
+    max-width: 31ch !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.36 !important;
+    color: rgba(245, 234, 204, .82) !important;
+    white-space: normal !important;
+    transform: none !important;
+  }
+  body.home-overhaul .home-route .route-mark,
+  body.home-overhaul .home-route span:not([data-i18n]) {
+    display: inline-flex !important;
+    width: auto !important;
+    margin-top: 4px !important;
+    font-size: 13px !important;
+    letter-spacing: .16em !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+}
+@media (max-width: 430px) {
+  body.home-overhaul .home-route {
+    min-height: 162px !important;
+    padding: 22px 18px !important;
+  }
+  body.home-overhaul .home-route strong {
+    font-size: clamp(29px, 8.6vw, 38px) !important;
+  }
+}
+/* preview announcement mobile banner restore */
+@media (max-width: 760px) {
+  body.announcements-overhaul .announcement-hero,
+  body.announcements-overhaul .unified-page-title,
+  body.announcements-overhaul .inner-hero {
+    background:
+      linear-gradient(180deg, rgba(1,8,9,.02), rgba(1,8,9,.88) 62%, rgba(1,8,9,.98)),
+      url("assets/announcements-board.webp") !important;
+    background-size: 100% 220px, 100% 220px !important;
+    background-position: top center, top center !important;
+    background-repeat: no-repeat, no-repeat !important;
+    padding-top: 150px !important;
+  }
+  body.announcements-overhaul .announcement-hero::before,
+  body.announcements-overhaul .announcement-hero::after,
+  body.announcements-overhaul .unified-page-title::before,
+  body.announcements-overhaul .unified-page-title::after {
+    display: none !important;
+  }
+}
+@media (max-width: 430px) {
+  body.announcements-overhaul .announcement-hero,
+  body.announcements-overhaul .unified-page-title,
+  body.announcements-overhaul .inner-hero {
+    background-size: 100% 205px, 100% 205px !important;
+    padding-top: 140px !important;
+  }
+}
