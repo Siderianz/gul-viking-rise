@@ -32,12 +32,12 @@
     const label = text => window.GUL_GUIDE_LABELS?.[text]?.[languageIndex] || text;
     groups.forEach(group=>{
       const section=document.createElement("article"); section.className=group.en === "Start Here" ? "guide-start-strip" : "guide-link-group";
-      const title=document.createElement("h2"); title.textContent=ru?group.ru:label(group.en); section.appendChild(title);
+      const title=document.createElement("h2"); title.textContent=ru?group.ru:label(group.en); section.appendChild(title); if(group.note){ const note=document.createElement("p"); note.className="guide-group-note"; note.textContent=ru?"Открой нужный раздел ниже.":group.note; section.appendChild(note); } const links=document.createElement("div"); links.className="guide-chip-grid"; section.appendChild(links);
       window.GUL_GUIDE_DATA.sheets.filter(sheet=>group.test.test(sheet.name.trim())).forEach(sheet=>{
         const name=sheet.name.trim(); const a=document.createElement("a");
         a.href="https://docs.google.com/spreadsheets/d/1q49zHAj6hK8vT-AieP3fpKfMtoQGrmMfnsQCtGOAT1E/edit?gid="+gids[name]+"#gid="+gids[name];
         a.target="_blank"; a.rel="noopener noreferrer";
-        a.textContent=(ru ? (names[name]?.[1] || name) : label(names[name]?.[0] || name))+" ↗"; section.appendChild(a);
+        a.innerHTML="<span>"+(ru ? (names[name]?.[1] || name) : label(names[name]?.[0] || name))+"</span><em>↗</em>"; links.appendChild(a);
       });
       root.appendChild(section);
     });
