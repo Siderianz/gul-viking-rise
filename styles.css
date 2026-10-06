@@ -13817,3 +13817,75 @@ body.guides-overhaul .guide-action-row .button.guide-action-tile:not(.primary) s
     width: min(62vw, 215px) !important;
   }
 }
+/* preview welcome warriors mobile spacing */
+@media (max-width: 760px) {
+  body.home-overhaul .harbor-hero .hero-content,
+  body.home-overhaul:has(.harbor-hero) .hero-content {
+    top: 27% !important;
+    width: min(82vw, 330px) !important;
+    max-width: 330px !important;
+  }
+
+  body.home-overhaul .home-welcome-line {
+    top: 57% !important;
+    width: min(82vw, 330px) !important;
+  }
+
+  body.home-overhaul .home-welcome-line strong {
+    max-width: 13ch !important;
+    margin-bottom: 9px !important;
+    font-size: clamp(22px, 6.2vw, 29px) !important;
+    line-height: 1 !important;
+    letter-spacing: .025em !important;
+  }
+
+  body.home-overhaul .home-welcome-line span {
+    max-width: 29ch !important;
+    font-size: 9.5px !important;
+    line-height: 1.42 !important;
+    letter-spacing: .075em !important;
+  }
+
+  body.home-overhaul .home-scroll-cue {
+    top: auto !important;
+    bottom: clamp(24px, 5.8vh, 48px) !important;
+    width: min(58vw, 210px) !important;
+    min-height: 58px !important;
+    display: grid !important;
+    place-items: center !important;
+    padding: 10px 18px !important;
+  }
+
+  body.home-overhaul .home-scroll-cue span {
+    font-size: 10px !important;
+    letter-spacing: .18em !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.home-overhaul .harbor-hero .hero-content,
+  body.home-overhaul:has(.harbor-hero) .hero-content {
+    top: 26.5% !important;
+    width: min(84vw, 320px) !important;
+  }
+
+  body.home-overhaul .home-welcome-line {
+    top: 56.5% !important;
+  }
+
+  body.home-overhaul .home-welcome-line strong {
+    font-size: clamp(21px, 5.9vw, 27px) !important;
+  }
+
+  body.home-overhaul .home-welcome-line span {
+    font-size: 9px !important;
+    max-width: 28ch !important;
+  }
+
+  body.home-overhaul .home-scroll-cue {
+    bottom: clamp(22px, 5vh, 42px) !important;
+    width: min(60vw, 205px) !important;
+    min-height: 56px !important;
+  }
+}
