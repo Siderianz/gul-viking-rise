@@ -13889,3 +13889,88 @@ body.guides-overhaul .guide-action-row .button.guide-action-tile:not(.primary) s
     min-height: 56px !important;
   }
 }
+
+/* preview text-only enter hall rune */
+@media (max-width: 760px) {
+  body.home-overhaul .home-scroll-cue {
+    top: auto !important;
+    bottom: clamp(24px, 5.6vh, 46px) !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    display: inline-grid !important;
+    place-items: center !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    color: #f7e6b8 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    text-decoration: none !important;
+  }
+
+  body.home-overhaul .home-scroll-cue::before,
+  body.home-overhaul .home-scroll-cue::after {
+    content: "" !important;
+    display: block !important;
+    pointer-events: none !important;
+  }
+
+  body.home-overhaul .home-scroll-cue::before {
+    width: 92px !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(247, 222, 150, .78), transparent) !important;
+    animation: enterHallRunePulse 1.7s ease-in-out infinite !important;
+  }
+
+  body.home-overhaul .home-scroll-cue span {
+    display: block !important;
+    color: #f7e6b8 !important;
+    font-size: 11px !important;
+    font-weight: 900 !important;
+    letter-spacing: .22em !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-shadow: 0 0 14px rgba(246, 199, 91, .28), 0 8px 18px rgba(0,0,0,.85) !important;
+  }
+
+  body.home-overhaul .home-scroll-cue i {
+    display: block !important;
+    width: 34px !important;
+    height: 34px !important;
+    margin: 0 auto !important;
+    border: 1px solid rgba(247, 222, 150, .38) !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(247, 222, 150, .28), rgba(247, 222, 150, .04) 54%, transparent 68%) !important;
+    box-shadow: 0 0 18px rgba(246, 199, 91, .2), inset 0 0 14px rgba(246, 199, 91, .16) !important;
+    animation: enterHallRuneBlink 1.2s ease-in-out infinite !important;
+  }
+
+  body.home-overhaul .home-scroll-cue i::before {
+    content: "ᚱ" !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    color: #f7df96 !important;
+    font-family: var(--font-display) !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    text-shadow: 0 0 12px rgba(246, 199, 91, .48) !important;
+  }
+}
+
+@keyframes enterHallRuneBlink {
+  0%, 100% { opacity: .46; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes enterHallRunePulse {
+  0%, 100% { opacity: .28; transform: scaleX(.72); }
+  50% { opacity: .92; transform: scaleX(1); }
+}
