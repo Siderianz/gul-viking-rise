@@ -1,0 +1,37 @@
+body.leadership-overhaul .officer-message { position:relative; z-index:3; width:fit-content; max-width:100%; margin:18px auto 0; }
+body.leadership-overhaul .officer-message summary { display:flex; align-items:center; justify-content:center; gap:20px; min-height:42px; padding:10px 22px; border:1px solid rgba(197,169,117,.48); border-radius:6px; background:linear-gradient(145deg,#3b2d1e,#241b14); color:#ead6ad; font:600 13px/1.3 "Segoe UI",Arial,sans-serif; cursor:pointer; list-style:none; }
+body.leadership-overhaul .officer-message summary::-webkit-details-marker { display:none; }
+body.leadership-overhaul .officer-message summary::after { content:'⌄'; color:#bda176; font-size:15px; }
+body.leadership-overhaul .officer-message[open] summary::after { content:'⌃'; }
+body.leadership-overhaul .officer-message summary:hover { border-color:#d4b47a; background:#3b2a1d; }
+body.leadership-overhaul .officer-message summary:focus-visible { outline:2px solid #e5d0a6; outline-offset:4px; }
+body.leadership-overhaul .officer-message:not([open]) .officer-contacts { display:none; }
+body.leadership-overhaul .officer-contacts { position:relative; z-index:2; display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:10px; }
+body.leadership-overhaul .officer-contacts a { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:9px 15px; border:1px solid rgba(197,169,117,.36); border-radius:6px; background:linear-gradient(145deg,#34271c,#211914); color:#e5d0a6; font:600 12px/1.3 "Segoe UI",Arial,sans-serif; letter-spacing:.015em; text-decoration:none; }
+body.leadership-overhaul .officer-contacts a:hover { background:#3b2a1d; border-color:#c2a16a; color:#fff0cf; }
+body.leadership-overhaul .officer-contacts a:focus-visible { outline:2px solid #e5d0a6; outline-offset:4px; }
+body.leadership-overhaul .r5-copy .officer-message { margin:22px 0 0; }
+@media(max-width:600px) { body.leadership-overhaul .r5-copy .officer-message { margin-left:auto; margin-right:auto; } }
+body.leadership-overhaul .contact-message-button { position:relative; z-index:2; display:block; margin:20px auto 0; padding:11px 28px; border:1px solid #a78a58; border-radius:5px; background:linear-gradient(145deg,#42311e,#261d14); color:#efdbb5; font:600 13px/1.3 "Segoe UI",Arial,sans-serif; cursor:pointer; }
+body.leadership-overhaul .r5-copy .contact-message-button { margin-left:0; }
+body.leadership-overhaul .contact-card-view { position:absolute; inset:0; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px 20px; border-radius:inherit; background:radial-gradient(ellipse at 50% 0%,#44311d55,transparent 70%),linear-gradient(145deg,#211a14,#16110e 70%,#291714); text-align:center; overflow:auto; }
+body.leadership-overhaul .contact-card-view[hidden] { display:none !important; }
+body.leadership-overhaul :is(.officer-card,.r5-command-card) > :not(.contact-card-view) { opacity:1; visibility:visible; transition:opacity 180ms cubic-bezier(.23,1,.32,1),visibility 0s; }
+body.leadership-overhaul .contact-card-active > :not(.contact-card-view) { opacity:0; visibility:hidden; pointer-events:none; transition:opacity 180ms cubic-bezier(.23,1,.32,1),visibility 0s 180ms; }
+body.leadership-overhaul .contact-card-view { opacity:0; visibility:hidden; pointer-events:none; transition:opacity 180ms cubic-bezier(.23,1,.32,1),visibility 0s 180ms; }
+body.leadership-overhaul .contact-card-active > .contact-card-view { opacity:1; visibility:visible; pointer-events:auto; transition:opacity 180ms cubic-bezier(.23,1,.32,1),visibility 0s; }
+body.leadership-overhaul .contact-card-back { position:absolute; top:14px; left:18px; padding:6px; border:0; background:transparent; color:#cdb68e; font:12px "Segoe UI",Arial,sans-serif; cursor:pointer; }
+body.leadership-overhaul .contact-card-avatar { display:block; width:48px !important; height:48px !important; flex-shrink:0; object-fit:cover; border:1px solid #a88b59; border-radius:50%; margin:0 0 10px !important; }
+body.leadership-overhaul .contact-card-name { font:600 12px "Segoe UI",Arial,sans-serif; letter-spacing:.04em; color:#c7ad80; }
+body.leadership-overhaul .contact-card-view .contact-card-heading { max-width:22ch; margin:10px 0 16px !important; color:#ead6ad; font:600 22px/1.15 Georgia,serif !important; letter-spacing:-.02em; }
+body.leadership-overhaul .contact-card-options { display:grid; width:min(100%,300px); gap:10px; }
+body.leadership-overhaul .contact-card-option { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:11px 14px; border:1px solid #a78a584d; border-radius:6px; background:#e2c08208; text-decoration:none; color:#ead6ad; font:13px "Segoe UI",Arial,sans-serif; }
+body.leadership-overhaul .contact-card-option span { font-size:11px; color:#b6a58b; }
+body.leadership-overhaul .contact-card-option:hover { background:#e2c08212; border-color:#b99b68; }
+body.leadership-overhaul :is(.contact-message-button,.contact-card-back,.contact-card-option):focus-visible { outline:2px solid #e5d0a6; outline-offset:3px; }
+body.leadership-overhaul .contact-card-option { justify-content:center; gap:10px; }
+body.leadership-overhaul .contact-card-option span { margin-left:auto; font-size:10px; }
+body.leadership-overhaul .contact-platform-icon { width:21px; height:21px; flex-shrink:0; fill:currentColor; color:#dfc38d; }
+@media(prefers-reduced-motion:reduce) {
+  body.leadership-overhaul :is(.officer-card,.r5-command-card) > :not(.contact-card-view),body.leadership-overhaul .contact-card-view { transition-duration:80ms,0s; }
+}

@@ -388,7 +388,7 @@ Object.keys(translations).forEach((lang) => {
 
 function currentPage() {
   const file = location.pathname.split("/").pop() || "index.html";
-  return pages.find((page) => page.href === file) || pages[0];
+  return pages.find((page) => page.href === (file === "guide.html" ? "guides.html" : file)) || pages[0];
 }
 
 function t(lang, key) {
@@ -415,7 +415,7 @@ function renderSharedLayout() {
       </nav>
       <div class="language-switcher" data-i18n-aria-label="layout.language" role="group">
         <select data-language-select aria-label="Language">${Object.entries(languageNames).map(([code,name]) => `<option value="${code}">${name}</option>`).join("")}</select>
-        
+
       </div>
     `;
   }
@@ -770,7 +770,3 @@ Object.keys(translations).forEach((lang) => {
 if (typeof applyLanguage === "function" && typeof getLanguage === "function") {
   applyLanguage(getLanguage());
 }
-
-
-
-

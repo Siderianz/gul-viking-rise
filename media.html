@@ -11,7 +11,12 @@
     <title>Media | GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
     <link rel="stylesheet" href="styles.css?finalHallLogo=1791290001">
-  <link rel="preload" as="image" href="assets/section-media.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
+  <link rel="preload" as="image" href="assets/section-media.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css">
+    <link rel="stylesheet" href="guild-clock-top.css?v=20261107">
+    <link rel="stylesheet" href="brand-theme.css?v=20261107">
+    <link rel="stylesheet" href="section-layout.css?v=20261107">
+    <link rel="stylesheet" href="victory-gallery.css?v=1">
+  </head>
   <body class="media-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
       <a class="brand" href="index.html"><span><strong>GUL</strong><small>Together further</small></span></a>
@@ -40,48 +45,29 @@
         </div>
       </section>
 
-      <section class="media-board" aria-label="Media categories">
-        <article class="media-tile large" style="--tile-art:url('assets/section-media.webp')">
-          <span>Gallery</span>
-          <h2>Raid snapshots</h2>
-          <p>Hero shots, marches, fireside moments, and guild screenshots will sit here.</p>
-        </article>
-        <article class="media-tile" style="--tile-art:url('assets/battlefield-hero.webp')">
-          <span>Clips</span>
-          <h2>Battle reels</h2>
-          <p>Short wins, big hits, and battlefield highlights.</p>
-        </article>
-        <article class="media-tile" style="--tile-art:url('assets/announcements-board.webp')">
-          <span>Posters</span>
-          <h2>Event banners</h2>
-          <p>Recruitment cards, event notices, and visual announcements.</p>
-        </article>
+      <section class="victory-browser" data-media-view="root" aria-label="Media collections">
+        <a class="victory-collection" href="media.html?category=achievements#collections"><span class="page-kicker">Media collection</span><h2>Achievements</h2><p>The victories that brought us together.</p><span class="victory-text-link">Explore achievements ↗</span></a>
       </section>
-
-      <section class="media-note">
-        <span aria-hidden="true">◆</span>
-        <p><strong>Archive opening soon.</strong> The first collection will be added once leadership gathers the cleanest shots and clips.</p>
+      <section class="victory-browser" id="collections" data-media-view="achievements" hidden aria-labelledby="collection-title">
+        <a class="victory-text-link" href="media.html">← All media</a><h2 id="collection-title">Achievements</h2>
+        <a class="victory-collection victory-album-cover" href="media.html?album=kvk1#kvk1"><img src="assets/kvk1/team-05-preview.webp" alt="GUL gathered at Eternal City"><div><span class="page-kicker">Victory album</span><h2>KVK1 Champions</h2><p>Eternal City. A victory shared by GUL.</p><span class="victory-text-link">Open album ↗</span></div></a>
       </section>
+      <section data-media-view="kvk1" hidden class="victory-album" id="kvk1" aria-labelledby="kvk-album-title">
+        <a class="victory-text-link" href="media.html?category=achievements#collections">← Achievements</a>
+        <div class="victory-album-heading"><div><span class="page-kicker">KVK1 Champions</span><h2 id="kvk-album-title">Eternal City</h2><p>Gathered as one. A moment to remember our KVK1 victory.</p></div></div>
+        <div class="victory-photo-grid">
+          <figure class="victory-photo victory-photo-featured"><a href="assets/kvk1/team-05.webp" data-victory-photo aria-label="Open photo: One guild. One victory."><img src="assets/kvk1/team-05-preview.webp" alt="GUL troops assembled around Eternal City in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo"><a href="assets/kvk1/team-03.webp" data-victory-photo aria-label="Open photo: The victory gathering"><img src="assets/kvk1/team-03-preview.webp" alt="GUL troops assembled around Eternal City in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo"><a href="assets/kvk1/team-04.webp" data-victory-photo aria-label="Open photo: The champions assembled"><img src="assets/kvk1/team-04-preview.webp" alt="GUL troops assembled around Eternal City in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo"><a href="assets/kvk1/team-01.webp" data-victory-photo aria-label="Open photo: The night formation"><img src="assets/kvk1/team-01-preview.webp" alt="GUL troops assembled around Eternal City at night after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo"><a href="assets/kvk1/team-02.webp" data-victory-photo aria-label="Open photo: Together at Eternal City"><img src="assets/kvk1/team-02-preview.webp" alt="GUL troops assembled around Eternal City at night after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+        </div>
+</section>
     </main>
     <footer class="site-footer"><span>GUL</span><span>Mediaархив пополняется</span></footer>
     <script src="languages.js"></script><script src="script.js?sitewideMobile=1791261601"></script>
-  <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
+  <script src="page-transitions.js"></script><script src="background-preload.js"></script>
+    <script src="guild-clock-top.js?v=20261107" defer></script>
+    <script src="victory-gallery.js?v=1" defer></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,25 @@
+/* The hall is the page backdrop. Keep the masthead's gutters on its content,
+   rather than applying those gutters to the hall artwork. */
+body.home-overhaul > main {
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+body.home-overhaul .hero.harbor-hero {
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  border-radius:0 !important;
+  background-size:cover, cover !important;
+  background-position:center top, center top !important;
+}
+@media(max-width:760px) {
+  body.home-overhaul .hero.harbor-hero {
+    height:calc(100dvh - var(--guild-masthead-height,170px)) !important;
+    min-height:calc(100dvh - var(--guild-masthead-height,170px)) !important;
+  }
+}

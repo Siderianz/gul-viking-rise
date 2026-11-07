@@ -1,0 +1,50 @@
+/* Match the established page width of Announcements, Leadership and Migration. */
+body:not(.language-gate) main.page:is(.achievements-overhaul,.media-overhaul,.guide-hub,.guide-detail,.socials-overhaul) {
+  width:min(1180px,calc(100% - 48px)) !important;
+  max-width:1180px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+body:not(.language-gate) :is(.achievements-overhaul,.media-overhaul,.socials-overhaul) > :is(.achievements-ledger,.media-board,.socials-grid) { margin-top:32px !important; gap:26px !important; }
+body:not(.language-gate) :is(.achievement-panel,.social-card,.media-tile) { padding:32px !important; }
+body:not(.language-gate) :is(.achievements-coming-soon,.media-note) { margin-top:32px !important; padding:28px 32px !important; }
+body:not(.language-gate) .guide-hub .guide-directory-hero {
+  position:relative;
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:flex-start !important;
+  width:100% !important;
+  min-height:380px;
+  padding:clamp(36px,5vw,64px) !important;
+  margin:0 0 34px !important;
+  overflow:hidden;
+  border:1px solid rgba(197,169,117,.3);
+  border-radius:28px !important;
+  background:linear-gradient(90deg,rgba(16,12,9,.94),rgba(19,13,10,.68) 48%,rgba(22,13,10,.12)),url("assets/section-guides.webp") center / cover no-repeat !important;
+  box-shadow:inset 0 1px 0 rgba(241,218,169,.06),0 20px 54px rgba(7,5,3,.22);
+}
+body:not(.language-gate) .guide-hub .guide-directory-hero .page-kicker { margin:0 0 22px !important; }
+body:not(.language-gate) .guide-hub .guide-directory-hero h1 { max-width:760px; margin:0 0 22px !important; font-family:Georgia,"Times New Roman",serif !important; font-weight:700 !important; font-size:clamp(46px,6.1vw,76px) !important; line-height:.94 !important; letter-spacing:-.035em !important; color:#ead6ad; }
+body:not(.language-gate) .guide-hub .guide-directory-hero p { margin:0 !important; max-width:48ch; font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif !important; font-size:15px !important; font-weight:650 !important; color:#ded2bd; line-height:1.6; }
+body:not(.language-gate) .guide-hub #guide-app { margin-top:0; }
+@media(max-width:900px) {
+  body:not(.language-gate) main.page:is(.achievements-overhaul,.media-overhaul,.guide-hub,.guide-detail,.socials-overhaul) { width:calc(100% - 32px) !important; }
+  body:not(.language-gate) :is(.achievement-panel,.social-card,.media-tile) { padding:26px !important; }
+}
+@media(max-width:600px) {
+  body:not(.language-gate) main.page:is(.achievements-overhaul,.media-overhaul,.guide-hub,.guide-detail,.socials-overhaul) { width:calc(100% - 28px) !important; }
+  body:not(.language-gate) .guide-hub .guide-directory-hero {
+    min-height:340px;
+    justify-content:flex-end !important;
+    padding:190px 24px 30px !important;
+    border-radius:22px !important;
+    background:linear-gradient(180deg,rgba(16,12,9,.04),rgba(16,12,9,.3) 42%,rgba(16,12,9,.96) 83%),url("assets/section-guides.webp") center top / cover no-repeat !important;
+  }
+  body:not(.language-gate) .guide-hub .guide-directory-hero .page-kicker { margin-bottom:18px !important; }
+  body:not(.language-gate) .guide-hub .guide-directory-hero h1 { font-size:36px !important; margin-bottom:18px !important; }
+  body:not(.language-gate) :is(.achievement-panel,.social-card,.media-tile) { padding:24px !important; }
+  body:not(.language-gate) :is(.achievements-coming-soon,.media-note) { padding:24px !important; }
+}

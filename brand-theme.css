@@ -1,0 +1,47 @@
+/* The hall sets the palette: smoke-dark timber, aged gold, and a quiet red undertone. */
+:root { --night:#100d0b; --deep:#1c1511; --panel:rgba(29,22,18,.94); --panel-solid:#211914; --line:rgba(194,164,113,.17); --line-strong:rgba(205,176,126,.36); --gold:#c2a16a; --gold-soft:#e5d0a6; }
+body { isolation:isolate; }
+body:not(.has-language-gate),body.home-overhaul:not(.has-language-gate) { background:#100d0b !important; background-color:#100d0b !important; }
+body:not(.has-language-gate)::before { background:url("assets/leader-throne.webp") center 35% / cover no-repeat !important; opacity:.27 !important; filter:saturate(.45) blur(5px) !important; transform:scale(1.03); }
+body:not(.has-language-gate)::after { background:radial-gradient(ellipse at 85% 5%,rgba(91,34,29,.14),transparent 52%),linear-gradient(90deg,rgba(13,10,8,.86),rgba(13,10,8,.65) 50%,rgba(13,10,8,.88)) !important; }
+body:not(.language-gate) .site-header { background:linear-gradient(180deg,rgba(28,21,16,.97),rgba(15,12,10,.97)) !important; border-color:rgba(197,169,117,.18) !important; backdrop-filter:blur(16px); }
+body:not(.language-gate) .top-nav { background:rgba(21,17,14,.85) !important; border-color:rgba(197,169,117,.19) !important; }
+body:not(.language-gate) .site-header select { background:linear-gradient(180deg,#282019,#17130f) !important; border-color:rgba(197,169,117,.28) !important; color:#e5cfaa !important; }
+body:not(.language-gate) .site-header select option { background:#1c1712; color:#e5cfaa; }
+body .site-footer { background:rgba(15,12,10,.8) !important; border-color:rgba(197,169,117,.13) !important; }
+.guide-hub,.guide-detail { --guide-surface:#1b1511; --guide-border:rgba(190,157,105,.2); --guide-text:#e9e2d8; --guide-muted:#bcb3a6; --guide-accent:#ddc79f; }
+body .guide-hub .hub-category { background:linear-gradient(140deg,rgba(47,35,25,.75),rgba(23,18,15,.96) 65%,rgba(47,23,21,.6)); border-color:rgba(197,169,117,.2); border-top-color:rgba(218,191,143,.3); border-radius:8px; box-shadow:inset 0 1px 0 rgba(255,236,194,.035),0 8px 24px rgba(10,7,5,.18); }
+body .guide-hub .hub-category:hover,body .guide-hub .hub-category[aria-expanded="true"] { background:linear-gradient(140deg,rgba(57,42,28,.82),rgba(28,21,17,.97) 65%,rgba(56,27,23,.68)); border-color:rgba(205,173,116,.48); }
+body .guide-hub .hub-category strong { font-size:22px; font-weight:600; letter-spacing:.005em; }
+body .guide-hub .hub-category .category-arrow { color:#aa8d5f; font-size:24px; }
+body .guide-hub .hub-heading { display:block !important; width:auto !important; padding:0 !important; background:none !important; }
+body .guide-hub .hub-heading p { font-size:16px; }
+body .guide-detail .guide-article { background:linear-gradient(140deg,rgba(31,24,18,.97),rgba(20,16,13,.97)); border-top-color:rgba(218,191,143,.24); box-shadow:0 16px 48px rgba(9,6,4,.18); }
+body .guide-detail .guide-image-card,body .guide-detail .build-card { background:linear-gradient(135deg,#261d16,#191410); border-color:rgba(194,164,113,.21); }
+body .guide-detail .guide-stats,body .guide-detail .guide-calculator-result { background:linear-gradient(140deg,#30231a,#1b1511); border-color:rgba(194,164,113,.3); }
+body .guide-hub .guide-field input,body .guide-detail .guide-field input,body .guide-detail .guide-field select { background:rgba(17,14,11,.85); border-color:rgba(190,163,117,.36); color:#e9e0d2; box-shadow:inset 0 1px 4px rgba(7,5,3,.24); }
+body .guide-detail .guide-field option { background:#1c1712; }
+body .guide-detail .guide-table thead th { background:#30251c; }
+body .guide-detail .guide-table tbody th,body .guide-detail .guide-table td { border-color:rgba(190,157,105,.17); }
+body .guide-detail .guide-button,body .guide-hub .guide-button,.guide-image-viewer .guide-button { background:linear-gradient(180deg,#382b1d,#261d16); border-color:rgba(194,164,113,.48); color:#e7d2ab; }
+body .guide-detail .guide-button:hover,body .guide-hub .guide-button:hover { background:#423020; }
+.guide-image-viewer { background:#1b1511; }
+body .hub-topic { border-color:rgba(194,164,113,.18); }
+body .wishlist-rating,body .gear-stat-card .gear-meta,body .build-use,body .build-card h4 { color:#c4b8a6; }
+body .guide-image-card img { background:#100d0b; }
+body .migration-panel,body .migration-application-card,body .leadership-note,body .officer-card,body .media-note,body .social-card { background-color:#211914 !important; }
+body:not(.has-language-gate) :is(.achievement-panel,.achievements-coming-soon,.migration-panel,.migration-steps,.migration-application-card,.leadership-note,.officer-card,.media-note) {
+  background:linear-gradient(140deg,rgba(43,32,23,.96),rgba(21,17,14,.98) 72%,rgba(42,21,19,.94)) !important;
+  border-color:rgba(197,169,117,.22) !important;
+  box-shadow:inset 0 1px 0 rgba(247,223,175,.035),0 12px 32px rgba(7,5,3,.16) !important;
+}
+/* Carry the hall's warm shadow treatment through every page opening. */
+body:not(.has-language-gate) :is(.announcement-hero,.leadership-hero,.migration-hero,.achievements-hero,.media-hero,.socials-hero) {
+  background:linear-gradient(90deg,rgba(16,12,9,.94),rgba(19,13,10,.68) 48%,rgba(44,19,16,.24)),var(--inner-backdrop) center / cover no-repeat !important;
+  background-color:#100d0b !important;
+}
+body:not(.has-language-gate) main.page :is(.war-dispatch,.notice-panel,.r5-command-card,.social-card,.media-tile):nth-child(n) {
+  background:linear-gradient(140deg,rgba(43,32,23,.96),rgba(21,17,14,.98) 72%,rgba(42,21,19,.94)) !important;
+  background-color:#211914 !important;
+  border-color:rgba(197,169,117,.22) !important;
+}

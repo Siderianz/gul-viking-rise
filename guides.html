@@ -11,7 +11,12 @@
     <title>Guides | GUL</title>
     <link rel="icon" type="image/png" href="assets/guild-logo-source.webp">
     <link rel="stylesheet" href="styles.css?finalHallLogo=1791290001">
-  <link rel="preload" as="image" href="assets/section-guides.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css"></head>
+  <link rel="preload" as="image" href="assets/section-guides.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css">
+    <link rel="stylesheet" href="guild-clock-top.css?v=20261107">
+    <link rel="stylesheet" href="guide-experience.css?v=editorial2">
+    <link rel="stylesheet" href="brand-theme.css?v=20261107">
+    <link rel="stylesheet" href="section-layout.css?v=20261107">
+  </head>
   <body><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
       <a class="brand" href="index.html"><span><strong>GUL</strong><small>Together further</small></span></a>
@@ -26,52 +31,22 @@
       </nav>
     </header>
 
-    <main class="page guides-page guides-overhaul">
-      <section class="guides-hero" aria-labelledby="guides-title">
-        <div>
-          <span class="page-kicker">War Room</span>
-          <h1 id="guides-title">Guides for Sharper Raids</h1>
-          <p>Builds, events, mounts, gear, PvP notes, and calculators organized like a command table instead of a messy document pile.</p>
-          <div class="guide-action-row">
-            <a class="button primary guide-action-tile" href="https://docs.google.com/spreadsheets/d/1q49zHAj6hK8vT-AieP3fpKfMtoQGrmMfnsQCtGOAT1E/edit?usp=sharing" target="_blank" rel="noreferrer"><strong>Open Guide</strong></a>
-            <a class="button guide-action-tile" href="https://docs.google.com/spreadsheets/d/1F1evqgHF9Qa7WUd12Sj3znI-mJsNrKk0ZDeVDuFUCvE/edit?usp=drivesdk" target="_blank" rel="noreferrer"><strong>PvP Calculator</strong></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="guide-feature-strip" aria-label="Guide highlights">
-        <article><span>01</span><h2>PvP Builds</h2><p>Hero pairings, rally choices, skill priorities, and fast combat notes.</p></article>
-        <article><span>02</span><h2>Growth Path</h2><p>Research, equipment, mounts, EXP, and seasonal progress routes.</p></article>
-        <article><span>03</span><h2>Event Prep</h2><p>What to save, when to spend, and how to enter events ready.</p></article>
-      </section>
-
-      <section class="guide-directory" id="guide-directory" aria-label="Guide topics"></section>
-      <section class="guide-credit"><p>Source: GUL Ultimate Guide. Credits: Thorbjørnsson.</p></section>
+    <main class="page guides-page guides-overhaul guide-hub" id="guide-library">
+      <header class="hub-heading guide-directory-hero">
+        <span class="page-kicker" data-guide-hero="eyebrow">The War Room</span>
+        <h1 data-guide-hero="title">Victory Begins at the War Table</h1>
+        <p data-guide-hero="intro">Commander builds, battle tactics, and tools to prepare your next march.</p>
+      </header>
+      <div id="guide-app" data-guide-view="directory"><p role="status">Loading guides…</p></div>
+      <noscript>Enable JavaScript to browse the guides.</noscript>
     </main>
 
     <footer class="site-footer"><span>GUL</span><span>Guides для команды</span></footer>
-    <script src="guide-data.js"></script>
-    <script src="guide-links.js?guideShortButtons=1791272201"></script>
-    <script src="languages.js"></script><script src="script.js?sitewideMobile=1791261601"></script>
-  <script src="page-transitions.js"></script><script src="background-preload.js"></script></body>
+    <script src="languages.js"></script><script src="script.js?guideEditorial=20261107"></script>
+  <script src="page-transitions.js"></script><script src="background-preload.js"></script>
+    <script src="guild-clock-top.js?v=20261107" defer></script>
+    <script src="guide-calculator.js?v=editorial2" defer></script>
+
+    <script src="guide-experience.js?v=editorial2" defer></script>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

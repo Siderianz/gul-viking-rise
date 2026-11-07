@@ -1,0 +1,8 @@
+body:not(.language-gate) .site-header .language-switcher { display:flex !important; flex-direction:column !important; gap:6px !important; align-items:stretch; }
+.site-header .guild-clock { position:relative; width:100%; padding:0; margin:0; color:#e4d3b4; background:none; border:0; box-shadow:none; }
+.guild-clock-inner,.guild-clock-times { display:grid; width:100%; gap:3px; padding:0; margin:0; border:0; background:none; box-shadow:none; }
+.guild-clock-face { display:grid; grid-template-columns:1fr auto auto; gap:5px; align-items:baseline; }
+.guild-clock-label { color:#c2ad8a; font:500 9px "Segoe UI",Arial,sans-serif; white-space:nowrap; }
+.guild-clock-face [data-clock-value] { font:600 10px "Segoe UI",Arial,sans-serif; font-variant-numeric:tabular-nums; color:#ecdfc7; line-height:1.2; }
+.guild-clock-face .guild-clock-date { font:9px "Segoe UI",Arial,sans-serif; color:#b8ad9e; white-space:nowrap; }
+@media(max-width:600px) { .site-header .guild-clock { min-width:150px; } }
