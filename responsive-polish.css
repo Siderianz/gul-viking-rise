@@ -92,3 +92,18 @@ body:not(.language-gate) :is(.guide-table-wrap,.top-nav) { overscroll-behavior-x
     letter-spacing:0 !important;
   }
 }
+/* Constrain the navigation within its grid column at intermediate widths. */
+body:not(.language-gate) .site-header.site-header .top-nav {
+  min-width:0 !important;
+  max-width:100% !important;
+  overflow-x:auto !important;
+  overscroll-behavior-x:contain;
+}
+body:not(.language-gate) .site-header.site-header .top-nav a { flex-shrink:0 !important; }
+/* Short landscape screens need room for the artwork and separated controls. */
+@media(max-height:500px) and (max-width:1100px) {
+  body:not(.language-gate) .site-header.site-header { position:relative !important; top:auto !important; }
+  body.home-overhaul.home-overhaul .hero.harbor-hero { min-height:650px !important; height:650px !important; }
+  body.home-overhaul.home-overhaul .home-welcome-line { top:auto !important; bottom:280px !important; }
+  body.home-overhaul.home-overhaul .home-scroll-cue { top:auto !important; bottom:24px !important; }
+}
