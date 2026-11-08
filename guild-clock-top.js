@@ -6,7 +6,7 @@
   const zone=Intl.DateTimeFormat().resolvedOptions().timeZone;
   const clock=document.createElement('aside');clock.className='guild-clock';
   clock.innerHTML='<div class="guild-clock-inner"><div class="guild-clock-times"><div class="guild-clock-face"><span class="guild-clock-label">UTC</span><time data-clock-value="utc"></time><time class="guild-clock-date" data-clock-date="utc"></time></div><div class="guild-clock-face"><span class="guild-clock-label" data-clock-local-label>Local time</span><time data-clock-value="local"></time><time class="guild-clock-date" data-clock-date="local"></time></div></div></div>';
-  (header.querySelector('.language-switcher')||header).append(clock);
+  header.append(clock);
   const measure=()=>document.documentElement.style.setProperty('--guild-masthead-height',Math.ceil(header.getBoundingClientRect().height)+'px');
   const observer=new ResizeObserver(measure);observer.observe(header);observer.observe(clock);measure();
   const utc=clock.querySelector('[data-clock-value="utc"]'),local=clock.querySelector('[data-clock-value="local"]'),label=clock.querySelector('[data-clock-local-label]');

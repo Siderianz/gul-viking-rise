@@ -1,8 +1,37 @@
-body:not(.language-gate) .site-header .language-switcher { display:flex !important; flex-direction:column !important; gap:6px !important; align-items:stretch; }
-.site-header .guild-clock { position:relative; width:100%; padding:0; margin:0; color:#e4d3b4; background:none; border:0; box-shadow:none; }
-.guild-clock-inner,.guild-clock-times { display:grid; width:100%; gap:3px; padding:0; margin:0; border:0; background:none; box-shadow:none; }
-.guild-clock-face { display:grid; grid-template-columns:1fr auto auto; gap:5px; align-items:baseline; }
-.guild-clock-label { color:#c2ad8a; font:500 9px "Segoe UI",Arial,sans-serif; white-space:nowrap; }
-.guild-clock-face [data-clock-value] { font:600 10px "Segoe UI",Arial,sans-serif; font-variant-numeric:tabular-nums; color:#ecdfc7; line-height:1.2; }
-.guild-clock-face .guild-clock-date { font:9px "Segoe UI",Arial,sans-serif; color:#b8ad9e; white-space:nowrap; }
-@media(max-width:600px) { .site-header .guild-clock { min-width:150px; } }
+/* Guild time has its own header row, separate from language selection. */
+body:not(.language-gate) .site-header.site-header {
+  display:grid !important;
+  grid-template-columns:auto minmax(0,1fr) auto !important;
+  gap:8px 24px !important;
+  align-items:center !important;
+}
+body:not(.language-gate) .site-header.site-header .brand { grid-column:1 !important; grid-row:1 !important; }
+body:not(.language-gate) .site-header.site-header .top-nav { grid-column:2 !important; grid-row:1 !important; justify-self:center; }
+body:not(.language-gate) .site-header.site-header .language-switcher { grid-column:3 !important; grid-row:1 !important; }
+body:not(.language-gate) .site-header.site-header > .guild-clock {
+  grid-column:1 / -1;
+  grid-row:2;
+  width:100%;
+  min-width:0 !important;
+  padding:2px 0 6px;
+  margin:0;
+  color:#e4d3b4;
+  background:none;
+  border:0;
+  box-shadow:none;
+}
+.guild-clock-inner { width:100%; }
+.guild-clock-times { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:12px 28px; }
+.guild-clock-face { display:grid; grid-template-columns:auto auto auto; align-items:baseline; gap:8px; }
+body .site-header .guild-clock-label { color:#c2ad8a; font:500 12px "Segoe UI",Arial,sans-serif !important; white-space:nowrap; }
+body .site-header .guild-clock-face [data-clock-value] { color:#f0dfbd; font:600 14px "Segoe UI",Arial,sans-serif !important; font-variant-numeric:tabular-nums; }
+body .site-header .guild-clock-date { color:#b8ad9e; font:12px "Segoe UI",Arial,sans-serif !important; white-space:nowrap; }
+@media(max-width:1100px) {
+  body:not(.language-gate) .site-header.site-header > .guild-clock { grid-row:3; padding:3px 4px; }
+  .guild-clock-times { justify-content:center; }
+}
+@media(max-width:600px) {
+  .guild-clock-times { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .guild-clock-face { grid-template-columns:auto auto; justify-content:center; column-gap:8px; row-gap:3px; }
+  body .site-header .guild-clock-date { grid-column:1 / -1; text-align:center; font-size:11px !important; }
+}

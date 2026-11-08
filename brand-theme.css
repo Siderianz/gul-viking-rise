@@ -95,4 +95,20 @@ html.guild-page-ready body > main {
 @media(prefers-reduced-motion:reduce) {
   html.guild-page-ready body > main { animation:none !important; }
   html.guild-page-loading .scene-loading { transition:none !important; }
+}@font-face {
+  font-family:"GUL Cinzel";
+  src:url('assets/fonts/cinzel-700.ttf') format('truetype');
+  font-weight:700;
+  font-style:normal;
+  font-display:block;
+}
+body:not(.language-gate) .site-header .brand.brand strong {
+  font-family:"GUL Cinzel",Georgia,serif !important;
+  font-weight:700 !important;
+}
+body:not(.language-gate) .site-header .brand.brand::before {
+  top:50% !important;
+  bottom:auto !important;
+  height:48px !important;
+  transform:translateY(-50%) !important;
 }
