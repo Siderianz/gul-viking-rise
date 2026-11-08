@@ -23,3 +23,26 @@ body.home-overhaul .hero.harbor-hero {
     min-height:calc(100dvh - var(--guild-masthead-height,170px)) !important;
   }
 }
+/* Align the home wordmark accent with the complete two-line lockup. */
+body.home-overhaul .site-header .brand::before {
+  top:50% !important;
+  bottom:auto !important;
+  height:48px !important;
+  transform:translateY(-50%) !important;
+}
+body.home-overhaul .site-header .brand > span {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:3px;
+}
+body.home-overhaul .site-header .brand .brand-full-name {
+  display:block !important;
+  color:#c8ad78 !important;
+  font-family:Georgia,serif !important;
+  font-size:9px !important;
+  line-height:1.4 !important;
+  letter-spacing:.1em !important;
+  text-transform:uppercase;
+  white-space:nowrap;
+}

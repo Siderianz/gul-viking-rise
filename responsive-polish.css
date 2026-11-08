@@ -1,0 +1,94 @@
+/* Shared device refinements; preserve the established hall artwork and layout. */
+body:not(.language-gate) main.page { min-width:0; }
+body.home-overhaul > main { overflow-x:clip; }
+body.home-overhaul .hero.harbor-hero.battlefield-hero { max-width:100% !important; width:100% !important; margin-left:0 !important; margin-right:0 !important; }
+body:not(.language-gate) :is(input,select,textarea) { max-width:100%; }
+body:not(.language-gate) :is(.victory-album-heading,.victory-achievement-copy,.guide-section,.officer-card) { min-width:0; overflow-wrap:break-word; }
+body:not(.language-gate) :is(.contact-message-button,.contact-card-back,.contact-card-option,.guide-button,.victory-viewer button) { min-height:44px; }
+body:not(.language-gate) :is(.guide-table-wrap,.top-nav) { overscroll-behavior-x:contain; }
+@media(max-width:1100px) {
+  body:not(.language-gate) .site-header .top-nav a { min-height:44px !important; display:inline-flex !important; align-items:center; justify-content:center; padding:10px 13px !important; font-size:11px !important; }
+  body:not(.language-gate) .site-header .top-nav { scroll-padding-inline:16px; }
+}
+@media(min-width:601px) and (max-width:1000px) {
+  body.leadership-overhaul .leadership-officer-grid { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+  body .victory-achievement { grid-template-columns:1fr; }
+  body .victory-achievement-copy { padding:30px; }
+}
+@media(max-width:600px) {
+  body:not(.language-gate) main :is(input,select,textarea) { font-size:16px !important; min-height:44px; }
+  body:not(.language-gate) .site-header select { min-height:44px !important; }
+  body.leadership-overhaul .contact-card-view { padding-top:48px; padding-bottom:16px; }
+  body.leadership-overhaul .contact-card-back { top:3px; }
+  body.leadership-overhaul .contact-card-option { min-height:44px; }
+  body .victory-photo img { width:100%; height:auto; }
+  body .guide-table-wrap { max-width:100%; }
+}
+@media(hover:hover) and (pointer:fine) {
+  body .contact-message-button:hover { border-color:#e5d0a6; }
+}
+/* Keep the masthead compact and balanced across small screens and tablets. */
+@media(max-width:1100px) {
+  body:not(.language-gate) .site-header.site-header {
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) 150px !important;
+    grid-template-rows:auto auto !important;
+    gap:10px 12px !important;
+    align-items:center !important;
+    padding:10px 12px !important;
+  }
+  body:not(.language-gate) .site-header.site-header .brand {
+    grid-column:1 !important;
+    grid-row:1 !important;
+    justify-self:start !important;
+    width:auto !important;
+    min-width:0 !important;
+    padding:5px 0 5px 12px !important;
+    margin:0 !important;
+  }
+  body:not(.language-gate) .site-header.site-header .language-switcher {
+    grid-column:2 !important;
+    grid-row:1 !important;
+    width:150px !important;
+    min-width:0 !important;
+    margin:0 !important;
+    justify-self:end !important;
+  }
+  body:not(.language-gate) .site-header.site-header .guild-clock { min-width:0 !important; }
+  body:not(.language-gate) .site-header.site-header .top-nav {
+    grid-column:1 / -1 !important;
+    grid-row:2 !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    margin:0 !important;
+    overflow-x:auto !important;
+    flex-wrap:nowrap !important;
+    justify-content:flex-start !important;
+  }
+  body:not(.language-gate) .site-header.site-header .top-nav a { flex-shrink:0 !important; }
+}
+@media(max-width:360px) {
+  body:not(.language-gate) .site-header.site-header {
+    grid-template-columns:minmax(0,1fr) 138px !important;
+    padding:8px !important;
+    column-gap:8px !important;
+  }
+  body:not(.language-gate) .site-header.site-header .language-switcher { width:138px !important; }
+  body:not(.language-gate) .site-header.site-header .brand strong { font-size:28px !important; }
+  body:not(.language-gate) .site-header.site-header .brand small.brand-full-name { font-size:7px !important; letter-spacing:.08em !important; }
+  body .build-commander-portraits { gap:16px; }
+  body .build-hero-frame { width:80px; height:80px; }
+  body .build-hero-art { width:96px; height:96px; transform:scale(.833333); transform-origin:top left; }
+}
+@media(max-width:700px) {
+  body:not(.language-gate) .site-footer { flex-wrap:wrap; gap:12px; }
+  body:not(.language-gate) main :is(.social-card,.guide-section,.notice-panel) { min-width:0; }
+  body:not(.language-gate) main :is(h1,h2,h3,p,a) { overflow-wrap:break-word; }
+}
+@media(max-width:360px) {
+  body:not(.language-gate) .announcement-hero.announcement-hero h1 {
+    font-size:clamp(24px,7.5vw,27px) !important;
+    letter-spacing:0 !important;
+  }
+}

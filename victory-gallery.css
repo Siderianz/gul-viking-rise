@@ -1,4 +1,9 @@
 .victory-album { margin-top:48px; scroll-margin-top:110px; }
+.season-honor-record { margin-top:36px; }
+.season-honor-record h2 { margin:14px 0; color:#ead6ad; font:700 clamp(28px,4vw,44px)/1.1 Georgia,serif; }
+.season-honor-record p { color:#c7bcab; font:14px/1.6 "Segoe UI",Arial,sans-serif; }
+.season-honor-record a { display:block; margin-top:24px; }
+.season-honor-record img { display:block; width:100%; height:auto; border:1px solid #80674577; border-radius:12px; }
 .victory-browser { margin-top:36px; scroll-margin-top:110px; }
 body [data-media-view][hidden] { display:none !important; }
 .victory-browser > h2 { color:#ead6ad; font:700 38px Georgia,serif; margin:24px 0; }
@@ -15,12 +20,12 @@ body .victory-album-cover { display:grid; grid-template-columns:1.4fr 1fr; gap:3
 .victory-album-heading p,.victory-achievement-copy p { margin:0; max-width:48ch; color:#c7bcab; font:15px/1.7 "Trebuchet MS","Segoe UI",sans-serif; }
 body .victory-text-link { display:inline-flex; align-items:center; gap:16px; padding:8px 0; color:#dec69b; border-bottom:1px solid #806745; font:600 13px/1.5 "Segoe UI",Arial,sans-serif; text-decoration:none; }
 body .victory-text-link:hover { color:#fff0ce; border-color:#dec69b; }
-.victory-photo-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+.victory-photo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
 .victory-photo { margin:0; min-width:0; }
-.victory-photo-featured { grid-column:1 / -1; }
+.victory-photo-featured { grid-column:auto; }
 .victory-photo a { position:relative; display:block; overflow:hidden; border:1px solid rgba(197,169,117,.27); border-radius:12px; background:#100d0b; }
-.victory-photo img { display:block; width:100%; height:auto; aspect-ratio:1.75; object-fit:contain; }
-.victory-photo-featured img { aspect-ratio:2.327; }
+.victory-photo img { display:block; width:100%; height:auto; aspect-ratio:16 / 9; object-fit:contain; }
+.victory-photo-featured img { aspect-ratio:16 / 9; }
 .victory-photo-open { position:absolute; right:14px; bottom:14px; padding:7px 10px; border:1px solid #9a805255; border-radius:4px; background:#100d0be8; color:#ead6ad; font:11px "Segoe UI",Arial,sans-serif; }
 .victory-photo a:hover { border-color:#bd9a60; }
 .victory-photo a:focus-visible,.victory-text-link:focus-visible { outline:2px solid #e5c58b; outline-offset:5px; }

@@ -1332,3 +1332,22 @@ body.leadership-overhaul .r5-rank-sigil {
     0 0 34px rgba(238,202,130,.13),
     0 18px 32px rgba(0,0,0,.38) !important;
 }
+
+/* New R4 portraits: keep each photo centered in the existing circular frame. */
+body.leadership-overhaul .officer-card .portrait-crop {
+  overflow: hidden;
+  flex: none;
+}
+body.leadership-overhaul .officer-card .officer-avatar {
+  display: block;
+  object-fit: cover !important;
+  transform: none !important;
+}
+body.leadership-overhaul .officer-card .portrait-rogal { object-position: center 24% !important; }
+body.leadership-overhaul .officer-card .portrait-warkatz { object-position: center 42% !important; }
+body.leadership-overhaul .officer-card .portrait-storri { object-position: center 50% !important; }
+body.leadership-overhaul .officer-card .portrait-chocberry { object-position: center 25% !important; }
+
+/* The Emperor portrait: keep his face and crown centered in the round frame. */
+body.leadership-overhaul .r5-avatar-ring .lead-avatar { object-fit: cover !important; object-position: center 20% !important; }
+

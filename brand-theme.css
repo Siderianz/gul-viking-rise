@@ -45,3 +45,54 @@ body:not(.has-language-gate) main.page :is(.war-dispatch,.notice-panel,.r5-comma
   background-color:#211914 !important;
   border-color:rgba(197,169,117,.22) !important;
 }
+/* Shared guild lockup: consistent alignment and readable subtitle on every page. */
+body .site-header .brand::before {
+  top:50% !important;
+  bottom:auto !important;
+  height:48px !important;
+  transform:translateY(-50%) !important;
+}
+body .site-header .brand > span {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  gap:5px !important;
+}
+body .site-header .brand small.brand-full-name {
+  display:block !important;
+  color:#c8ad78 !important;
+  font-family:"Segoe UI",Arial,sans-serif !important;
+  font-size:9px !important;
+  font-weight:500 !important;
+  line-height:1.4 !important;
+  letter-spacing:.12em !important;
+  text-transform:uppercase !important;
+  white-space:nowrap !important;
+}
+/* A restrained carved-letter wordmark shared by every page. */
+body .site-header .brand.brand strong {
+  font-family:"Cinzel",Georgia,serif !important;
+  font-weight:700 !important;
+  letter-spacing:.16em !important;
+  line-height:1.15 !important;
+  font-variant:normal !important;
+}
+/* Hide the arrival toast before first paint on subsequent page visits. */
+
+/* Keep unfinished content covered, then reveal one settled layout. */
+html.guild-page-loading:not(.guild-page-ready) body > main { visibility:hidden; }
+html.guild-page-loading .scene-loading {
+  background:#100d0b !important;
+  transition:opacity 180ms ease-out !important;
+}
+html.guild-page-ready body > main {
+  animation:guild-ready-slide 280ms cubic-bezier(.23,1,.32,1) both;
+}
+@keyframes guild-ready-slide {
+  from { transform:translateX(18px); }
+  to { transform:translateX(0); }
+}
+@media(prefers-reduced-motion:reduce) {
+  html.guild-page-ready body > main { animation:none !important; }
+  html.guild-page-loading .scene-loading { transition:none !important; }
+}

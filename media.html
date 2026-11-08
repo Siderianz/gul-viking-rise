@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
   <head>
+    <script>document.documentElement.classList.add("guild-page-loading")</script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Скриншоты, видео, афиши и архив боевых событий гильдии Viking Rise.">
@@ -13,9 +14,11 @@
     <link rel="stylesheet" href="styles.css?finalHallLogo=1791290001">
   <link rel="preload" as="image" href="assets/section-media.webp" fetchpriority="high"><link rel="stylesheet" href="desktop-performance.css">
     <link rel="stylesheet" href="guild-clock-top.css?v=20261107">
-    <link rel="stylesheet" href="brand-theme.css?v=20261107">
+    <link rel="stylesheet" href="brand-theme.css?v=20261108-ready">
     <link rel="stylesheet" href="section-layout.css?v=20261107">
     <link rel="stylesheet" href="victory-gallery.css?v=1">
+    <link rel="stylesheet" href="responsive-polish.css?v=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap">
   </head>
   <body class="media-page"><div class="scene-loading" role="status" aria-label="Loading"><div class="loading-toast" aria-hidden="true"><div class="toast-mug mug-left"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-mug mug-right"><img src="assets/viking-tankard.webp" alt="" width="100" height="100"></div><div class="toast-foam"><i></i><i></i><i></i><i></i></div></div><strong>Pouring the ale.</strong><span class="loading-quip">Saving you a seat.</span><span class="loading-small">Preparing the hall for your arrival</span></div>
     <header class="site-header">
@@ -50,24 +53,43 @@
       </section>
       <section class="victory-browser" id="collections" data-media-view="achievements" hidden aria-labelledby="collection-title">
         <a class="victory-text-link" href="media.html">← All media</a><h2 id="collection-title">Achievements</h2>
-        <a class="victory-collection victory-album-cover" href="media.html?album=kvk1#kvk1"><img src="assets/kvk1/team-05-preview.webp" alt="GUL gathered at Eternal City"><div><span class="page-kicker">Victory album</span><h2>KVK1 Champions</h2><p>Eternal City. A victory shared by GUL.</p><span class="victory-text-link">Open album ↗</span></div></a>
+        <a class="victory-collection victory-album-cover" href="media.html?album=kvk1#kvk1"><img src="assets/kvk1/team-05-preview.webp" alt="GUL gathered at Svartalfheim"><div><span class="page-kicker">Victory album</span><h2>KVK1 Champions</h2><p>Svartalfheim. A victory shared by GUL.</p><span class="victory-text-link">Open album ↗</span></div></a>
       </section>
       <section data-media-view="kvk1" hidden class="victory-album" id="kvk1" aria-labelledby="kvk-album-title">
         <a class="victory-text-link" href="media.html?category=achievements#collections">← Achievements</a>
-        <div class="victory-album-heading"><div><span class="page-kicker">KVK1 Champions</span><h2 id="kvk-album-title">Eternal City</h2><p>Gathered as one. A moment to remember our KVK1 victory.</p></div></div>
+        <div class="victory-album-heading"><div><span class="page-kicker">KVK1 Champions</span><h2 id="kvk-album-title">Svartalfheim</h2><p>Gathered as one. A moment to remember our KVK1 victory.</p></div></div>
         <div class="victory-photo-grid">
-          <figure class="victory-photo victory-photo-featured"><a href="assets/kvk1/team-05.webp" data-victory-photo aria-label="Open photo: One guild. One victory."><img src="assets/kvk1/team-05-preview.webp" alt="GUL troops assembled around Eternal City in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
-          <figure class="victory-photo"><a href="assets/kvk1/team-03.webp" data-victory-photo aria-label="Open photo: The victory gathering"><img src="assets/kvk1/team-03-preview.webp" alt="GUL troops assembled around Eternal City in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
-          <figure class="victory-photo"><a href="assets/kvk1/team-04.webp" data-victory-photo aria-label="Open photo: The champions assembled"><img src="assets/kvk1/team-04-preview.webp" alt="GUL troops assembled around Eternal City in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
-          <figure class="victory-photo"><a href="assets/kvk1/team-01.webp" data-victory-photo aria-label="Open photo: The night formation"><img src="assets/kvk1/team-01-preview.webp" alt="GUL troops assembled around Eternal City at night after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
-          <figure class="victory-photo"><a href="assets/kvk1/team-02.webp" data-victory-photo aria-label="Open photo: Together at Eternal City"><img src="assets/kvk1/team-02-preview.webp" alt="GUL troops assembled around Eternal City at night after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo victory-photo-featured"><a href="assets/kvk1/season-honor.webp" data-victory-photo aria-label="Open season honor record"><img src="assets/kvk1/season-honor.webp" alt="GUL Season Honor: one season win in Svartalfheim, Victory, October 3 2026 UTC" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo victory-photo-featured"><a href="assets/kvk1/team-05.webp" data-victory-photo aria-label="Open photo: One guild. One victory."><img src="assets/kvk1/team-05-preview.webp" alt="GUL troops assembled around Svartalfheim in daylight after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
+          <figure class="victory-photo"><a href="assets/kvk1/team-02.webp" data-victory-photo aria-label="Open photo: Together at Svartalfheim"><img src="assets/kvk1/team-02-preview.webp" alt="GUL troops assembled around Svartalfheim at night after the KVK1 victory" loading="lazy" decoding="async"></a></figure>
         </div>
 </section>
     </main>
     <footer class="site-footer"><span>GUL</span><span>Mediaархив пополняется</span></footer>
     <script src="languages.js"></script><script src="script.js?sitewideMobile=1791261601"></script>
-  <script src="page-transitions.js"></script><script src="background-preload.js"></script>
+  <script src="page-transitions.js?v=5"></script><script src="background-preload.js?v=6"></script>
     <script src="guild-clock-top.js?v=20261107" defer></script>
     <script src="victory-gallery.js?v=1" defer></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

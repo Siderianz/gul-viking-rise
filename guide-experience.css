@@ -126,3 +126,10 @@
 @media(max-width:900px) { .guide-reading-layout { grid-template-columns:minmax(0,1fr); gap:24px; } .guide-outline { position:static; } .guide-outline nav { display:flex; gap:10px 22px; flex-wrap:wrap; } .guide-outline .guide-back { display:none; } .guide-article { padding:24px; } .guide-related { margin-left:0; } }
 @media(max-width:600px) { .page.guide-hub,.page.guide-detail { width:calc(100% - 32px); padding-top:28px; } .hub-categories,.hub-topic-list,.build-grid,.guide-gallery,.wishlist-list { grid-template-columns:1fr; } .hub-category { padding:20px 50px 20px 20px; } .hub-category strong { font-size:22px; } .guide-article { padding:18px; } .guide-outline h2 { margin-bottom:10px; } .guide-outline nav { gap:9px 15px; font-size:13px; } .guide-article-heading { margin-bottom:20px; padding-bottom:20px; } .guide-section>h2 { font-size:24px; } .guide-section p,.guide-points { font-size:15px; } .guide-calculator-fields { gap:0 12px; } .guide-field { font-size:13px; } .guide-stats { padding:16px; gap:16px; } .guide-stats strong { font-size:23px; } }
 @media(prefers-reduced-motion:no-preference) { .hub-category { transition:background-color 160ms ease,border-color 160ms ease; } }
+.build-commander-portraits { display:flex; flex-wrap:wrap; gap:18px; margin:20px 0 24px; }
+.build-commander { margin:0; text-align:center; }
+.build-hero-frame { position:relative; width:96px; height:96px; overflow:hidden; border:1px solid #9d8050; border-top-color:#d7bb80; border-radius:50%; background:radial-gradient(ellipse at 50% 36%,#53412b 0%,#2a2118 52%,#100e0b 80%); box-shadow:0 0 0 3px #17130f,0 0 0 4px #b5935733,0 6px 16px #0005; isolation:isolate; }
+.build-hero-frame::after { content:""; position:absolute; inset:0; border-radius:inherit; box-shadow:inset 0 0 12px 3px #100d0b88; pointer-events:none; }
+.build-hero-frame img { position:absolute; display:block; max-width:none !important; object-fit:fill; }
+.build-hero-art { position:absolute; inset:0; }
+.build-commander figcaption { margin-top:11px; color:#dcc599; font:600 11px/1.4 "Segoe UI",Arial,sans-serif; letter-spacing:.025em; }

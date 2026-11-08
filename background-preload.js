@@ -1,39 +1,35 @@
 (() => {
-  const loading = document.querySelector('.scene-loading');
-  const scenes = {
-    'index.html':['assets/hero-viking-guild.webp','assets/battlefield-hero.webp'],
-    'announcements.html':['assets/section-kingdom.webp'],
-    'migration.html':['assets/section-migration.webp'],
-    'achievements.html':['assets/section-achievements.webp'],
-    'media.html':['assets/section-media.webp'],
-    'guides.html':['assets/section-guides.webp'],
-    'kingdom.html':['assets/section-kingdom.webp','assets/leader-throne.webp'],
-    'contacts.html':['assets/section-contacts.webp']
-  };
-  const prepared = new Set();
-  const reveal = () => {
-    if (!loading || loading.classList.contains('is-ready')) return;
-    loading.classList.add('is-ready'); loading.setAttribute('aria-hidden','true');
-    setTimeout(()=>loading.remove(),450);
-  };
-  // Show the approved toast briefly on arrival, never wait for decorative images.
-  if (sessionStorage.getItem('gulContentVisited') === '1') {
-    loading?.remove();
-  } else {
-    sessionStorage.setItem('gulContentVisited','1');
-    setTimeout(reveal, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650);
-  }
-  window.addEventListener('pageshow',event=>{if(event.persisted) reveal();});
-  function prepareLink(event) {
-    if(navigator.connection?.saveData || /2g/.test(navigator.connection?.effectiveType || '')) return;
-    const link=event.target.closest('a[href]'); if(!link) return;
-    const url=new URL(link.href,location.href); if(url.origin!==location.origin) return;
-    for(const src of scenes[url.pathname.split('/').pop()] || []) {
-      if(prepared.has(src)) continue;
-      prepared.add(src); const image=new Image(); image.decoding='async'; image.src=src;
+  const loading=document.querySelector('.scene-loading');
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const decode=src=>{const image=new Image(); image.src=src; return image.decode().catch(()=>{});};
+  async function ready() {
+    const assets=new Set();
+    document.querySelectorAll('main, main *').forEach(el=>{
+      const rect=el.getBoundingClientRect();
+      if(rect.bottom<=0 || rect.top>innerHeight) return;
+      for(const match of getComputedStyle(el).backgroundImage.matchAll(/url\(["']?([^"')]+)["']?\)/g)) assets.add(match[1]);
+      if(el.tagName==='IMG' && el.currentSrc) assets.add(el.currentSrc);
+    });
+    await Promise.race([
+      Promise.all([document.fonts.ready,...Array.from(assets,decode)]),
+      new Promise(resolve=>setTimeout(resolve,2200))
+    ]);
+    document.documentElement.classList.add('guild-page-ready');
+    if(loading) {
+      loading.classList.add('is-ready');
+      loading.setAttribute('aria-hidden','true');
+      setTimeout(()=>loading.remove(),reduced.matches?0:200);
     }
   }
-  // Prepare only destinations the visitor shows interest in.
-  document.addEventListener('pointerover',prepareLink,{passive:true});
-  document.addEventListener('focusin',prepareLink);
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',ready,{once:true});
+  else ready();
+  window.addEventListener('pageshow',event=>{
+    if(event.persisted){document.documentElement.classList.add('guild-page-ready');loading?.remove();}
+  });
+  document.addEventListener('pointerover',event=>{
+    const link=event.target.closest('.top-nav a[href]');
+    if(!link || link.dataset.prepared) return;
+    link.dataset.prepared='1';
+    const hint=document.createElement('link');hint.rel='prefetch';hint.href=link.href;document.head.append(hint);
+  },{passive:true});
 })();
