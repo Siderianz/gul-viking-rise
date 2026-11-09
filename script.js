@@ -557,9 +557,10 @@ function initLanguageGate() {
   const previous=background.map(node=>node.inert);
   background.forEach(node=>node.inert=true);
   document.body.classList.add('has-language-gate');
-  const close=(lang)=>{
-    if (forceOpeningPreview) { applyLanguage(lang); sessionStorage.removeItem('guildWelcomeSeen'); return; }
+  const close=(lang,chosen=false)=>{
+
     sessionStorage.setItem('guildWelcomeSeen','1'); applyLanguage(lang);
+    if(chosen) window.dispatchEvent(new CustomEvent('guild-language-selected'));
     gate.classList.add('is-leaving');
     document.body.classList.add('home-is-revealing');
     window.setTimeout(()=>{
@@ -571,7 +572,7 @@ function initLanguageGate() {
     }, 920);
   };
   const buttons=Array.from(gate.querySelectorAll('[data-lang-choice]'));
-  buttons.forEach(button=>button.addEventListener('click',()=>close(button.dataset.langChoice)));
+  buttons.forEach(button=>button.addEventListener('click',()=>close(button.dataset.langChoice,true)));
   gate.addEventListener('keydown',event=>{
     if(event.key==='Escape'){event.preventDefault();close(savedLanguage);}
     if(event.key==='Tab'){
